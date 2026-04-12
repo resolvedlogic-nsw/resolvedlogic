@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Resolved Logic — who we are, how we think, and why structured solutions matter.">
+  <title>About Us | Resolved Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ============================================================
+     ABOUT PAGE — self-contained, no conflicts with style.css
+     ============================================================ */
+
+  /* ── Page hero (matches designs page pattern) ── */
+  .page-hero {
+    margin-top: 100px;
+    background: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 10% 60%, rgba(232,101,10,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 20%, rgba(200,160,80,0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+    padding: 56px 40px 52px;
+    text-align: center;
+    position: relative;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .page-hero-inner { max-width: 700px; margin: 0 auto; }
+  .page-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .page-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px;
+  }
+  .page-sub { font-size: 1rem; font-weight: 300; color: #6a6050; max-width: 520px; margin: 0 auto; }
+
+  /* ── Main wrapper ── */
+  .about-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  /* ── Shared section card style ── */
+  .about-card {
+    background: #f2ede3;
+    border: 1px solid #e4ddd0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .about-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--orange-light), var(--orange-dark));
+    z-index: 1;
+  }
+
+  /* ── Who We Are — 2-col: text left, values right ── */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .who-text {
+    padding: 44px 40px 44px 48px;
+  }
+  .who-text .section-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block;
+  }
+  .who-text h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700;
+    color: #2e2b26; margin-bottom: 20px; line-height: 1.2;
+  }
+  .who-text p {
+    font-size: 0.92rem; color: #55524d; line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  .who-text p:last-child { margin-bottom: 0; }
+
+  .who-values {
+    padding: 44px 44px 44px 36px;
+    background: #ede8de;
+    border-left: 1px solid #e4ddd0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .value-item {}
+  .value-title {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--orange-dark); margin-bottom: 6px; display: block;
+  }
+  .value-item p {
+    font-size: 0.87rem; color: #55524d; line-height: 1.65; margin: 0;
+  }
+  .value-divider {
+    border: none; border-top: 1px solid #ddd8ce; margin: 0;
+  }
+
+  /* ── How We Work — 3 process steps ── */
+  .process-section { padding: 44px 48px; }
+  .process-section .section-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block;
+  }
+  .process-section h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700;
+    color: #2e2b26; margin-bottom: 36px; line-height: 1.2;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .process-step {
+    padding: 0 32px 0 0;
+    position: relative;
+  }
+  .process-step:not(:last-child)::after {
+    content: '';
+    position: absolute; right: 16px; top: 16px; bottom: 0;
+    border-right: 1px dashed #d8d2c6;
+  }
+  .step-number {
+    font-size: 2.8rem; font-weight: 700; line-height: 1;
+    color: var(--orange); opacity: 0.2; letter-spacing: -0.04em;
+    margin-bottom: 8px; display: block;
+  }
+  .step-title {
+    font-size: 0.88rem; font-weight: 700; color: #2e2b26;
+    margin-bottom: 10px; display: block; letter-spacing: 0.02em;
+  }
+  .process-step p {
+    font-size: 0.85rem; color: #55524d; line-height: 1.65; margin: 0;
+  }
+
+  /* ── What We Build — capability tags ── */
+  .capabilities-section { padding: 44px 48px; }
+  .capabilities-section .section-label {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 10px; display: block;
+  }
+  .capabilities-section h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700;
+    color: #2e2b26; margin-bottom: 8px;
+  }
+  .capabilities-section .intro {
+    font-size: 0.92rem; color: #6a6050; margin-bottom: 32px; line-height: 1.6;
+  }
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .cap-item {
+    background: #ede8de;
+    border: 1px solid #ddd8ce;
+    border-radius: 6px;
+    padding: 18px 20px;
+    position: relative;
+    padding-left: 28px;
+  }
+  .cap-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--orange); border-radius: 6px 0 0 6px; opacity: 0.6;
+  }
+  .cap-item strong {
+    display: block; font-size: 0.82rem; font-weight: 700;
+    color: #2e2b26; margin-bottom: 4px;
+  }
+  .cap-item span {
+    font-size: 0.8rem; color: #706c64; line-height: 1.5;
+  }
+
+  /* ── CTA strip ── */
+  .about-cta {
+    background: var(--dark-grey);
+    background-image:
+      var(--leather-pattern),
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .about-cta h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700;
+    color: #fff; margin-bottom: 12px;
+  }
+  .about-cta p {
+    font-size: 0.95rem; color: rgba(255,255,255,0.6);
+    max-width: 480px; margin: 0 auto 28px; line-height: 1.65;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--orange);
+    background-image: var(--leather-pattern),
+      linear-gradient(145deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
+    color: #fff; font-family: var(--font);
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 13px 32px; border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset,
+                0 -1px 0 rgba(0,0,0,0.25) inset,
+                0 4px 14px rgba(0,0,0,0.4);
+    transition: filter 0.2s ease, transform 0.1s ease;
+  }
+  .cta-btn:hover  { filter: brightness(1.1); }
+  .cta-btn:active { transform: translateY(1px); }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .who-grid        { grid-template-columns: 1fr; }
+    .who-values      { border-left: none; border-top: 1px solid #e4ddd0; padding: 36px 44px; }
+    .process-steps   { grid-template-columns: 1fr; gap: 32px; }
+    .process-step::after { display: none; }
+    .process-step    { padding: 0; }
+    .cap-grid        { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .about-main      { padding: 40px 20px 60px; gap: 40px; }
+    .page-hero       { padding: 44px 24px 40px; }
+    .who-text        { padding: 32px 28px 28px 32px; }
+    .process-section,
+    .capabilities-section { padding: 32px 28px; }
+    .about-cta       { padding: 36px 24px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic — Home">
+        <img src="static/img/logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Who We Are</p>
+      <h1 class="page-heading">Resolved Logic</h1>
+      <p class="page-sub">A small, focused studio that turns operational chaos into software that actually works — and keeps working.</p>
+    </div>
+  </section>
+
+  <!-- ========== DECORATION BANNER ========== -->
+  <div id="decoration-banner">
+    <img src="static/img/decorationbanner.png" alt="From complexity to clarity" width="1400" height="316" loading="lazy">
+  </div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main-content" class="about-main">
+
+    <!-- ── Who We Are ── -->
+    <section class="about-card" aria-labelledby="about-who">
+      <div class="who-grid">
+        <div class="who-text">
+          <span class="section-label">The Studio</span>
+          <h2 id="about-who">We build software that makes hard things simple.</h2>
+          <p>Resolved Logic is a boutique development studio based in Sydney. We work with organisations — charities, event operators, industrial businesses, trade services — that have grown faster than their systems. The result is always the same: data in the wrong place, time wasted on manual work, and decisions made blind.</p>
+          <p>We come in, map the mess, and build the solution. Not a generic platform with a monthly subscription fee — a custom, purpose-built system that fits exactly how your organisation operates.</p>
+          <p>We are a lean team by choice. Every project gets our full attention. Every line of code is written with the understanding that someone will be relying on it every single day.</p>
+        </div>
+        <div class="who-values">
+          <div class="value-item">
+            <span class="value-title">Clarity First</span>
+            <p>We don't start building until we understand the problem completely. Most of the work happens before a single line of code is written.</p>
+          </div>
+          <hr class="value-divider">
+          <div class="value-item">
+            <span class="value-title">No Fluff</span>
+            <p>We build exactly what solves the problem. Features that don't serve a clear purpose don't get built. Complexity is the enemy.</p>
+          </div>
+          <hr class="value-divider">
+          <div class="value-item">
+            <span class="value-title">Long-Term Thinking</span>
+            <p>Every decision is made with future maintainability in mind. Systems we build today should still make sense in five years.</p>
+          </div>
+          <hr class="value-divider">
+          <div class="value-item">
+            <span class="value-title">Human-Centred</span>
+            <p>Technical excellence means nothing if the people using the system find it confusing or frustrating. Usability is non-negotiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── How We Work ── -->
+    <section class="about-card" aria-labelledby="about-process">
+      <div class="process-section">
+        <span class="section-label">Our Process</span>
+        <h2 id="about-process">From brief to delivered — how we work</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="step-number">01</span>
+            <span class="step-title">Understand</span>
+            <p>We start with deep discovery — mapping your current workflows, data sources, pain points and goals. We ask the uncomfortable questions so the solution actually fits the problem, not a guess at it.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">02</span>
+            <span class="step-title">Structure</span>
+            <p>Before any code is written, we design the logical architecture — data models, user flows, access controls and integration points. You see and approve the blueprint before we build it.</p>
+          </div>
+          <div class="process-step">
+            <span class="step-number">03</span>
+            <span class="step-title">Build & Deliver</span>
+            <p>We build in focused sprints with regular check-ins. No black boxes. When we deliver, we don't disappear — we document, train and support until your team is fully confident and self-sufficient.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What We Build ── -->
+    <section class="about-card" aria-labelledby="about-capabilities">
+      <div class="capabilities-section">
+        <span class="section-label">Capabilities</span>
+        <h2 id="about-capabilities">What we build</h2>
+        <p class="intro">We work across the full stack — from database architecture to front-end interface to automated integrations. If it involves turning messy data or manual processes into structured, reliable software, we can build it.</p>
+        <div class="cap-grid">
+          <div class="cap-item">
+            <strong>Custom Web Applications</strong>
+            <span>Django, Python and modern front-end — purpose-built systems that do exactly what your organisation needs, nothing more.</span>
+          </div>
+          <div class="cap-item">
+            <strong>CRM & Compliance Systems</strong>
+            <span>Centralised data management for organisations with complex compliance requirements — audit-ready by design.</span>
+          </div>
+          <div class="cap-item">
+            <strong>Registration & Event Portals</strong>
+            <span>High-availability registration systems with QR check-in, real-time dashboards and automated communications.</span>
+          </div>
+          <div class="cap-item">
+            <strong>Information Architecture</strong>
+            <span>Structured content hierarchies and navigation systems that help users find complex information quickly and confidently.</span>
+          </div>
+          <div class="cap-item">
+            <strong>Automation & OCR Pipelines</strong>
+            <span>Python automation that digitises physical records, reconciles multi-platform data and eliminates manual reporting work.</span>
+          </div>
+          <div class="cap-item">
+            <strong>API Integration</strong>
+            <span>Connecting disparate platforms — payment gateways, communication services, accounting systems — into a single coherent data layer.</span>
+          </div>
+          <div class="cap-item">
+            <strong>Business Intelligence</strong>
+            <span>Dashboards and reporting systems that turn raw operational data into decisions — designed for non-technical users.</span>
+          </div>
+          <div class="cap-item">
+            <strong>Security & Infrastructure</strong>
+            <span>Cloudflare integration, hardened access controls, encrypted data handling and audit logging for organisations with sensitive data obligations.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <div class="about-cta">
+      <h2>Have a problem worth solving?</h2>
+      <p>Every project starts with a conversation. Tell us what's broken, slow or missing — and we'll tell you how we'd approach it.</p>
+      <a href="contact.html" class="cta-btn">Start the Conversation</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="static/img/logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:resolvedlogic@gmail.com">resolvedlogic@gmail.com</a><br>
+          Central Coast, NSW, Australia
+        </address>
+	
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. ABN 58 721 547 632.  All rights reserved. </p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy</a>
+        <!--<a href="sitemap.html">Sitemap</a>-->
+      </nav>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>

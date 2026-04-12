@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  Resolved Logic — base.html
+  Master layout template.
+  
+  HOW TO USE:
+  Copy this file and rename it (e.g. designs.html).
+  Replace <!-- PAGE TITLE --> with your page title.
+  Replace <!-- PAGE CONTENT --> with your page-specific HTML.
+  The header and footer are inlined here for simplicity;
+  for a backend/SSI setup they can be server-side included.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resolved Logic — Turning tangled problems into structured solutions.">
+  <title><!-- PAGE TITLE --> | Resolved Logic</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <!-- header.html content: -->
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic — Home">
+        <img src="logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== PAGE CONTENT ========== -->
+  <main id="main-content">
+    <!-- Decoration Banner — transparent PNG over full-width asphalt texture.
+         Add this where needed on a page:
+         <div id="decoration-banner">
+           <img src="decorationbanner.png" alt="" width="1400" height="316" loading="lazy">
+         </div>
+    -->
+    <!-- PAGE CONTENT -->
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <!-- footer.html content: -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="cookies.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="/cdn-cgi/l/email-protection#6008050c0c0f201205130f0c1605040c0f0709034e030f0d"><span class="__cf_email__" data-cfemail="355d5059595a754750465a59435051595a525c561b565a58">[email&#160;protected]</span></a><br>
+          <a href="tel:+61000000000">+61 (0) 000 000 000</a><br><br>
+          Sydney, NSW<br>Australia
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. All rights reserved.</p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Pr

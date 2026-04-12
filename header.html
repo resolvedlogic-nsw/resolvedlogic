@@ -1,0 +1,42 @@
+<!-- ============================================================
+     Resolved Logic — header.html
+     Include this fragment inside every page's <body>,
+     immediately after the opening tag.
+     ============================================================ -->
+<header id="site-header" role="banner">
+
+  <!-- Textured background image -->
+  <div class="header-bg" aria-hidden="true"></div>
+
+  <div class="header-inner">
+
+    <!-- Logo / Home button -->
+    <a href="home.html" class="header-logo" aria-label="Resolved Logic — Home">
+      <img src="logoheader.png"
+           alt="Resolved Logic"
+           width="400"
+           height="89">
+    </a>
+
+    <!-- Mobile hamburger button -->
+    <button class="header-hamburger"
+            id="hamburger"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+      <a href="home.html"     class="nav-link">Home</a>
+      <a href="designs.html"  class="nav-link">Designs</a>
+      <a href="about.html"    class="nav-link">About Us</a>
+      <a href="contact.html"  class="nav-btn"  role="button">Contact Us</a>
+    </nav>
+
+  </div>
+</header>
+<!-- /header.html -->

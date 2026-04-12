@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the portfolio of Resolved Logic — complex problems transformed into structured, elegant solutions.">
+  <title>Designs | Resolved Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ============================================================
+     DESIGNS PAGE — all styles self-contained, no conflicts
+     ============================================================ */
+
+  /* ── Page hero ── */
+  .designs-hero {
+    margin-top: 100px;
+    background: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 10% 60%, rgba(232,101,10,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 20%, rgba(200,160,80,0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+    padding: 56px 40px 52px;
+    text-align: center;
+    position: relative;
+  }
+  .designs-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .designs-hero-inner { max-width: 700px; margin: 0 auto; }
+  .designs-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .designs-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px;
+  }
+  .designs-sub { font-size: 1rem; font-weight: 300; color: #6a6050; max-width: 480px; margin: 0 auto; }
+
+  /* ── Main content wrapper ── */
+  .designs-main {
+    padding: 56px 40px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* ============================================================
+     PROJECT CARD
+     Structure:
+       .project-card
+         .card-top           ← always visible, 2-col grid
+           .card-summary     ← left: text
+           .card-visual      ← right: logo + hero image
+         .card-expanded      ← hidden; full-width below
+           .card-details     ← 2-col: tech + human
+           .card-thumbs      ← full-width thumbnail strip
+     ============================================================ */
+
+  .project-card {
+    background: #f2ede3;
+    border-radius: 10px;
+    border: 1px solid #e4ddd0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease;
+    /* NO flex/grid here — children handle their own layout */
+  }
+  .project-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  .project-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--orange-light), var(--orange-dark));
+    z-index: 1;
+  }
+
+  /* ── TOP ROW — always visible ── */
+  .card-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* LEFT: summary text */
+  .card-summary {
+    padding: 36px 32px 28px 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .project-number {
+    font-size: 2.4rem; font-weight: 700; line-height: 1;
+    color: var(--orange); opacity: 0.22; letter-spacing: -0.03em;
+  }
+  .project-tag {
+    font-size: 0.63rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(42,42,42,0.45);
+    border: 1px solid rgba(42,42,42,0.15); border-radius: 20px; padding: 3px 10px;
+  }
+
+  .project-title {
+    font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 700;
+    color: #2e2b26; margin-bottom: 8px; line-height: 1.2;
+  }
+  .project-title a {
+    color: inherit; display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.2s ease;
+  }
+  .project-title a:hover { color: var(--orange); }
+  .ext-icon { width: 12px; height: 12px; opacity: 0.45; flex-shrink: 0; }
+
+  .project-transform {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+  .transform-from { color: rgba(42,42,42,0.38); text-decoration: line-through; text-decoration-color: rgba(42,42,42,0.2); }
+  .transform-arrow { color: var(--orange); font-size: 1rem; }
+  .transform-to   { color: var(--orange-dark); }
+
+  .project-summary-blocks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .summary-block { display: grid; grid-template-columns: 78px 1fr; gap: 0 10px; align-items: baseline; }
+  .summary-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); }
+  .summary-block p { font-size: 0.87rem; color: #55524d; line-height: 1.6; margin: 0; }
+
+  /* Expand button */
+  .expand-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: none; border: none; border-top: 1px solid #dcd7ca;
+    padding: 13px 0 0; margin-top: auto;
+    font-family: var(--font); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em;
+    color: #706c64; cursor: pointer; transition: color 0.2s ease;
+    width: 100%; text-align: left;
+  }
+  .expand-btn:hover,
+  .expand-btn[aria-expanded="true"] { color: var(--orange); }
+  .expand-chevron {
+    width: 16px; height: 16px; margin-left: auto; flex-shrink: 0;
+    transition: transform 0.25s ease; color: currentColor;
+  }
+  .expand-btn[aria-expanded="true"] .expand-chevron { transform: rotate(180deg); }
+
+  /* RIGHT: logo + hero image */
+  .card-visual {
+    border-left: 1px solid #e4ddd0;
+    background: #ede8de;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0;
+    gap: 14px;
+  }
+  .project-logo-wrap { display: flex; align-items: center; justify-content: center; min-height: 60px; }
+  .project-logo { max-width: 180px; max-height: 65px; width: auto; height: auto; object-fit: contain; }
+
+  .gallery-hero {
+    border-radius: 6px; overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15); cursor: zoom-in;
+  }
+  .gallery-hero img { width: 100%; height: auto; display: block; transition: transform 0.3s ease; }
+  .gallery-hero:hover img { transform: scale(1.015); }
+
+  /* ── EXPANDED SECTION — shown below the full card width ── */
+  .card-expanded { display: none; border-top: 2px solid rgba(232,101,10,0.18); }
+  .card-expanded.is-open { display: block; }
+
+  /* Details: 2-col grid */
+  .card-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 32px 44px;
+    background: #ede8db;
+    border-bottom: 1px solid #ddd7cc;
+  }
+  .details-col h5 {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #2b2926;
+    margin-bottom: 14px; padding-bottom: 7px; border-bottom: 1px solid #d4cec5;
+  }
+  .details-col ul { list-style: none; padding: 0; margin: 0; }
+  .details-col ul li {
+    font-size: 0.84rem; color: #55524d; line-height: 1.55;
+    padding: 7px 0 7px 16px; position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .details-col ul li:last-child { border-bottom: none; }
+  .details-col ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 14px;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--orange); opacity: 0.6;
+  }
+  .details-col ul li strong { color: #2b2926; font-weight: 600; }
+
+  /* Thumbnail strip: full width below details */
+  .card-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 44px 24px;
+    background: #e6e1d6;
+  }
+  .gallery-thumb {
+    height: 90px;
+    width: auto;
+    aspect-ratio: unset;
+    max-width: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: zoom-in;
+    border: 2px solid transparent;
+    opacity: 0.72;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: opacity 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .gallery-thumb:hover { opacity: 1; transform: scale(1.05); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+  .gallery-thumb.active {
+    border-color: var(--orange); opacity: 1;
+    box-shadow: 0 0 0 1px var(--orange-dark), 0 4px 12px rgba(232,101,10,0.25);
+  }
+
+  /* ── Lightbox ── */
+  #lightbox {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 24px;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox-img { max-width: 90vw; max-height: 88vh; border-radius: 6px; box-shadow: 0 24px 80px rgba(0,0,0,0.6); object-fit: contain; }
+  #lightbox-close {
+    position: absolute; top: 20px; right: 24px;
+    background: none; border: none; color: #fff; font-size: 2.4rem;
+    cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.2s;
+  }
+  #lightbox-close:hover { opacity: 1; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 1024px) {
+    .card-top { grid-template-columns: 1fr; }
+    .card-visual { border-left: none; border-top: 1px solid #e4ddd0; }
+    .card-details { padding: 28px 32px; }
+    .card-thumbs  { padding: 16px 32px 20px; }
+    .card-summary { padding: 28px 32px 24px 36px; }
+  }
+  @media (max-width: 768px) {
+    .designs-main { padding: 40px 20px 60px; gap: 28px; }
+    .designs-hero { padding: 44px 24px 40px; }
+    .card-summary { padding: 24px 24px 20px 28px; }
+    .card-details { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+    .card-thumbs  { padding: 14px 24px 18px; }
+    .summary-block { grid-template-columns: 1fr; gap: 2px; }
+    .gallery-thumb { height: 70px; }
+  }
+  @media (max-width: 480px) {
+    .project-number { font-size: 1.8rem; }
+    .gallery-thumb { height: 60px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic — Home">
+        <img src="static/img/logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="designs-hero">
+    <div class="designs-hero-inner">
+      <p class="designs-eyebrow">Case Studies</p>
+      <h1 class="designs-heading">Our Solutions Portfolio</h1>
+      <p class="designs-sub">Complex challenges transformed into efficient, logical outcomes.</p>
+    </div>
+  </section>
+
+  <!-- ========== DECORATION BANNER ========== -->
+  <div id="decoration-banner">
+    <img src="static/img/decorationbanner.png" alt="From complexity to clarity" width="1400" height="316" loading="lazy">
+  </div>
+
+  <!-- ========== PROJECTS ========== -->
+  <main id="main-content" class="designs-main">
+
+    <!-- ── 01: Paws a Moment ── -->
+    <article class="project-card" data-index="01">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <span class="project-tag">CRM / Compliance</span>
+          </div>
+          <h2 class="project-title">
+            <a href="https://pawsamoment.org.au" target="_blank" rel="noopener">
+              Paws a Moment Rescue
+              <svg class="ext-icon" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </h2>
+          <p class="project-transform">
+            <span class="transform-from">Fragmented Data</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Unified Compliance</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Critical animal data and legal surrenders were scattered across disparate emails and paper forms, making audits a nightmare and compliance a manual burden.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A centralised Django CRM built to automate the full administrative lifecycle of a rescue organisation — from surrender intake to forever home placement.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>100% data audit readiness, zero paperwork loss, and a streamlined path from "Surrender" to "Forever Home."</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/pawslogo.png" alt="Paws a Moment" class="project-logo">
+          </div>
+          <div class="gallery-hero">
+            <img src="static/img/p1.png" alt="Paws a Moment — homepage" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>Custom Django Admin:</strong> Role-based access for volunteers, carers and admins — each sees only what they need</li>
+              <li><strong>Compliance Register:</strong> State-regulated surrender forms, microchip records and vet history in one auditable system</li>
+              <li><strong>Cloudflare Security:</strong> DDoS protection, WAF rules and bot filtering hardening sensitive animal and personal data</li>
+              <li><strong>Automated Workflows:</strong> Trigger-based status transitions move animals through intake, foster, vet and adoption stages automatically</li>
+              <li><strong>Audit Trail:</strong> Every data change is timestamped and logged — fully defensible for government inspections</li>
+              <li><strong>Email Integration:</strong> Transactional emails fire on key events — surrender confirmation, foster assignment, adoption approval</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Health Tracker:</strong> Automated weight and medication logging for every animal, with historical charts for vet handover</li>
+              <li><strong>Auto-Contracts:</strong> Digital foster agreements generated from profiles, signed online and emailed automatically — no printing, no scanning</li>
+              <li><strong>Marketing Cards:</strong> Shareable graphics generated directly from animal profiles for social media adoption campaigns</li>
+              <li><strong>Volunteer Empowerment:</strong> Non-technical volunteers update records without needing IT support or admin intervention</li>
+              <li><strong>Foster Visibility:</strong> Coordinators see real-time placement status, upcoming vet appointments and medical alerts across the entire rescue</li>
+              <li><strong>Reporting:</strong> One-click monthly summaries of intake, outcomes and medical spend — previously a 4-hour manual task</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/p1.png" alt="Homepage" class="gallery-thumb active" loading="lazy">
+          <img src="static/img/p2.png" alt="Screenshot 2" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p3.png" alt="Screenshot 3" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p4.png" alt="Screenshot 4" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p6.png" alt="Screenshot 6" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p7.png" alt="Screenshot 7" class="gallery-thumb" loading="lazy">
+          <img src="static/img/p8.png" alt="Screenshot 8" class="gallery-thumb" loading="lazy">
+ 
+        </div>
+      </div>
+    </article>
+
+    <!-- ── 02: Summerfest ── -->
+    <article class="project-card" data-index="02">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <span class="project-tag">Registration / Events</span>
+          </div>
+          <h2 class="project-title">
+            <a href="https://summerfestrego.lighthouse.net.au" target="_blank" rel="noopener">
+              Summerfest Registration
+              <svg class="ext-icon" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </h2>
+          <p class="project-transform">
+            <span class="transform-from">Registration Chaos</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Rapid Check-In</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Managing 400+ registrations and on-site check-ins manually created dangerous delays for medical and dietary tracking at a youth summer festival.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A high-availability registration portal bridging digital sign-up with physical arrival — built for speed, safety, and zero-friction volunteer operation.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>Zero-wait entry for families and instant digital medical manifests for event safety teams on the day.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/summerfestlogo.png" alt="Summerfest" class="project-logo">
+          </div>
+          <div class="gallery-hero">
+            <img src="static/img/s1.png" alt="Summerfest — homepage" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>QR Code Engine:</strong> Unique QR codes generated per registration and emailed to families for instant gate scanning</li>
+              <li><strong>Multi-Stage Forms:</strong> Complex validation handles group registrations, dietary flags, medical conditions and guardian consent in a single flow</li>
+              <li><strong>Real-Time Dashboard:</strong> Live attendance counter, check-in log and flagged-medical-condition alerts for event coordinators</li>
+              <li><strong>Offline Resilience:</strong> Check-in system degrades gracefully if internet drops — critical for outdoor festival environments</li>
+              <li><strong>Data Export:</strong> One-click export of attendee manifests compatible with event safety and emergency services requirements</li>
+              <li><strong>Admin Controls:</strong> Coordinators can manually check-in, search by name or QR, and add late registrations on the day</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Parent Peace of Mind:</strong> Sensitive medical, allergy and dietary data captured securely at registration — not on a clipboard at the gate</li>
+              <li><strong>Volunteer Efficiency:</strong> Mobile-first check-in interface operable on any phone or tablet — volunteers trained in under 5 minutes</li>
+              <li><strong>Auto-Confirmation:</strong> Immediate confirmation and full event-day instructions emailed to parents at point of registration</li>
+              <li><strong>Safety Manifests:</strong> Medical staff can pull a live filtered list of attendees with specific conditions or allergies at any moment</li>
+              <li><strong>Reduced Queues:</strong> Average check-in time dropped from 3–4 minutes to under 30 seconds per family</li>
+              <li><strong>Audit Ready:</strong> Full registration history retained for post-event reporting, insurance and duty-of-care records</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/s1.png" alt="Homepage" class="gallery-thumb active" loading="lazy">
+          <img src="static/img/s2.png" alt="Screenshot 2" class="gallery-thumb" loading="lazy">
+          <img src="static/img/s3.png" alt="Screenshot 3" class="gallery-thumb" loading="lazy">
+          <img src="static/img/s4.png" alt="Screenshot 4" class="gallery-thumb" loading="lazy">
+          <img src="static/img/s5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
+          <img src="static/img/s6.png" alt="Screenshot 6" class="gallery-thumb" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <!-- ── 03: Heatrex ── -->
+    <article class="project-card" data-index="03">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">03</span>
+            <span class="project-tag">Industrial / Information Architecture</span>
+          </div>
+          <h2 class="project-title">
+            <a href="https://heatrex.com.au" target="_blank" rel="noopener">
+              Heatrex Wyong (Currently under development)
+              <svg class="ext-icon" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </h2>
+          <p class="project-transform">
+            <span class="transform-from">Industrial Density</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Logical Navigation</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Hundreds of complex industrial heating products with overlapping specifications made it nearly impossible for engineers to identify the right solution quickly.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A high-performance Information Architecture built on engineering logic — products organised by application, environment and certification rather than arbitrary categories.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>Reduced "time-to-quote" and significantly higher quality OEM lead generation from engineers who arrive already knowing what they need.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/heatrexlogo.png" alt="Heatrex" class="project-logo">
+          </div>
+          <div class="gallery-hero">
+            <img src="static/img/h1.png" alt="Heatrex — homepage" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>IA Taxonomy:</strong> Product hierarchy engineered around how industrial buyers actually search — by watt density, zone classification and application type</li>
+              <li><strong>Ex/Non-Ex Filtering:</strong> Hazardous area products clearly segregated with inline certification badges, reducing misquote risk</li>
+              <li><strong>SEO Architecture:</strong> Clean, keyword-rich URL structures and structured data markup targeting long-tail industrial search terms</li>
+              <li><strong>Spec Sheet Integration:</strong> Technical datasheets embedded per product with direct download — no registration wall blocking engineer access</li>
+              <li><strong>Performance:</strong> Sub-2-second page loads across the product catalogue despite dense specification content</li>
+              <li><strong>Mobile-Responsive:</strong> Full site functionality on mobile for site engineers browsing specs on the job</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Smart Quote Workflow:</strong> Quote request forms prompt for technical specs relevant to the selected product type — fewer back-and-forth emails per lead</li>
+              <li><strong>Engineer Confidence:</strong> Certification information, wattage tables and installation notes inline — engineers self-qualify without calling sales</li>
+              <li><strong>Trust Signalling:</strong> Professional documentation and compliance certificates visible to procurement and site managers</li>
+              <li><strong>Reduced Support Load:</strong> FAQ and specification content answers pre-sales questions, freeing the Heatrex team for complex enquiries</li>
+              <li><strong>Lead Quality:</strong> Enquiries arrive pre-filtered by product interest — sales team spends less time qualifying, more time closing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/h1.png" alt="Homepage" class="gallery-thumb active" loading="lazy">
+          <img src="static/img/h2.png" alt="Screenshot 2" class="gallery-thumb" loading="lazy">
+          <img src="static/img/h3.png" alt="Screenshot 3" class="gallery-thumb" loading="lazy">
+          <img src="static/img/h4.png" alt="Screenshot 4" class="gallery-thumb" loading="lazy">
+	  <img src="static/img/h5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
+ 
+        </div>
+      </div>
+    </article>
+
+    <!-- ── 04: ERP / OCR ── -->
+    <article class="project-card" data-index="04">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">04</span>
+            <span class="project-tag">Automation / OCR / ERP</span>
+          </div>
+          <h2 class="project-title">Internal ERP &amp; OCR Systems</h2>
+          <p class="project-transform">
+            <span class="transform-from">Paper Backlog</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Digital Intelligence</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>A legacy of 5,000+ physical job cards and fragmented payment data across Square and Stripe meant no visibility into trends, profitability or customer history.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A custom Python automation suite combining computer vision OCR, multi-platform API integration and a unified reporting dashboard.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>Instant retrieval of 10+ years of job history, automated financial reconciliation, and business intelligence previously impossible to access.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/eyelogo.png" alt="OCR Document Scanning" class="project-logo">
+          </div>
+        <div class="card-visual">
+          <div class="gallery-hero">
+            <img src="static/img/o1.png" alt="ERP/OCR system dashboard" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>OCR Pipeline:</strong> Computer Vision model trained to extract handwritten job card data — technician, job type, parts, labour — with high accuracy on varied handwriting</li>
+              <li><strong>API Consolidation:</strong> Square and Stripe transaction data pulled, normalised and reconciled into a unified financial ledger via scheduled Python jobs</li>
+              <li><strong>Pandas ETL:</strong> Automated cleaning pipeline handles duplicate detection, field normalisation and outlier flagging before dashboard load</li>
+              <li><strong>Search Index:</strong> 5,000+ digitised job cards indexed for full-text search — find any job by customer, date range, part number or technician</li>
+              <li><strong>Scheduled Automation:</strong> Nightly reconciliation runs without human intervention — data is always current by start of business</li>
+              <li><strong>Extensible Architecture:</strong> Modular design allows new data sources (Xero, MYOB, additional gateways) to be added with minimal rework</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Time Recovery:</strong> Monthly financial reconciliation dropped from 4+ hours of manual work to a 4-second dashboard refresh</li>
+              <li><strong>10-Year Visibility:</strong> Decade of job history — previously buried in filing cabinets — now searchable in under a second</li>
+              <li><strong>Non-Technical Dashboards:</strong> Business owners and admin staff read financial summaries without touching a spreadsheet</li>
+              <li><strong>Error Elimination:</strong> Manual data entry errors removed from the reporting chain — figures reconcile automatically against payment records</li>
+              <li><strong>Customer Intelligence:</strong> Frequency, spend and service history per customer — enabling targeted follow-up and loyalty identification</li>
+              <li><strong>Compliance Ready:</strong> Clean, auditable records reduce end-of-year accounting time and cost significantly</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/o1.png" alt="Dashboard" class="gallery-thumb active" loading="lazy">
+	  <img src="static/img/o2.png" alt="Screenshot 2" class="gallery-thumb" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="static/img/logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:resolvedlogic@gmail.com">resolvedlogic@gmail.com</a><br>
+          Central Coast, NSW, Australia
+        </address>
+	
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. ABN 58 721 547 632.  All rights reserved. </p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy</a>
+        <!--<a href="sitemap.html">Sitemap</a>-->
+      </nav>
+    </div>
+  </footer>
+  <script>
+  /* ============================================================
+     DESIGNS PAGE — inline JS
+     ============================================================ */
+  document.addEventListener('DOMContentLoaded', () => {
+
+    /* ── Mobile hamburger (from scripts.js, duplicated here for self-containment) ── */
+    const hamburger = document.getElementById('hamburger');
+    const nav       = document.getElementById('main-nav');
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        const bars = hamburger.querySelectorAll('span');
+        if (isOpen) {
+          bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+          bars[1].style.opacity   = '0';
+          bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+        } else {
+          bars[0].style.transform = bars[1].style.opacity = bars[2].style.transform = '';
+        }
+      });
+    }
+
+    /* ── Header scroll shadow ── */
+    const header = document.getElementById('site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.style.boxShadow = window.scrollY > 10
+          ? '0 4px 20px rgba(0,0,0,0.5)'
+          : '0 2px 12px rgba(0,0,0,0.35)';
+      }, { passive: true });
+    }
+
+    /* ── Expand / collapse ── */
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card     = btn.closest('.project-card');
+        const expanded = card.querySelector('.card-expanded');
+        const isOpen   = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !isOpen);
+        expanded.classList.toggle('is-open', !isOpen);
+      });
+    });
+
+    /* ── Lightbox ── */
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.innerHTML = `<button id="lightbox-close" aria-label="Close">&times;</button><img id="lightbox-img" src="" alt="">`;
+    document.body.appendChild(lightbox);
+
+    const lbImg   = document.getElementById('lightbox-img');
+    const lbClose = document.getElementById('lightbox-close');
+
+    function openLightbox(src, alt) {
+      lbImg.src = src; lbImg.alt = alt || '';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    /* Hero → lightbox */
+    document.querySelectorAll('.gallery-hero').forEach(hero => {
+      hero.addEventListener('click', () => {
+        const img = hero.querySelector('img');
+        if (img) openLightbox(img.src, img.alt);
+      });
+    });
+
+    /* Thumbnails → lightbox */
+    document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const card = thumb.closest('.project-card');
+        card.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+        openLightbox(thumb.src, thumb.alt);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Use - Resolved Logic. The rules of the road for our collaboration.">
+  <title>Terms of Use | Resolved Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── Page hero ── */
+  .page-hero {
+    margin-top: 100px;
+    background: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 10% 60%, rgba(232,101,10,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 20%, rgba(200,160,80,0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+    padding: 56px 40px 52px;
+    text-align: center;
+    position: relative;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .page-hero-inner { max-width: 700px; margin: 0 auto; }
+  .page-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .page-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px;
+  }
+  .page-sub { font-size: 1rem; font-weight: 300; color: #6a6050; max-width: 520px; margin: 0 auto; }
+
+  /* ── Main layout ── */
+  .legal-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  /* Last updated note */
+  .last-updated {
+    font-size: 0.75rem;
+    color: #9a9590;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-bottom: -16px;
+  }
+
+  /* ── Section card ── */
+  .legal-section {
+    background: #f2ede3;
+    border: 1px solid #e4ddd0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .legal-section::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--orange-light), var(--orange-dark));
+    z-index: 1;
+  }
+  .section-inner { padding: 32px 36px 32px 44px; }
+
+  .section-tag {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 6px; display: block;
+  }
+  .section-title {
+    font-size: 1.05rem; font-weight: 700;
+    color: #2e2b26; margin-bottom: 16px; line-height: 1.3;
+  }
+
+  /* Body copy */
+  .legal-section p {
+    font-size: 0.9rem; color: #55524d; line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  /* Bullet lists */
+  .legal-section ul {
+    list-style: none; padding: 0; margin: 0 0 14px;
+  }
+  .legal-section ul li {
+    font-size: 0.88rem; color: #55524d; line-height: 1.7;
+    padding: 5px 0 5px 18px; position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .legal-section ul li:last-child { border-bottom: none; }
+  .legal-section ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 13px;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--orange); opacity: 0.6;
+  }
+  .legal-section ul li strong { color: #2e2b26; font-weight: 600; }
+
+  /* Highlight / callout box */
+  .callout {
+    background: #ede8de;
+    border: 1px solid #ddd7cc;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.87rem;
+    color: #55524d;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 24px;
+  }
+  .callout::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--orange); border-radius: 6px 0 0 6px; opacity: 0.5;
+  }
+  .callout strong { color: #2e2b26; }
+
+  /* Contact CTA at bottom */
+  .legal-cta {
+    background: var(--dark-grey);
+    background-image: var(--leather-pattern),
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    padding: 40px 44px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .legal-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .cta-text h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .cta-text p  { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin: 0; }
+  .cta-link {
+    display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+    background: var(--orange);
+    background-image: var(--leather-pattern),
+      linear-gradient(145deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
+    color: #fff; font-family: var(--font);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 11px 24px; border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset,
+                0 -1px 0 rgba(0,0,0,0.25) inset,
+                0 4px 14px rgba(0,0,0,0.4);
+    transition: filter 0.2s ease, transform 0.1s ease;
+  }
+  .cta-link:hover  { filter: brightness(1.1); }
+  .cta-link:active { transform: translateY(1px); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .legal-main  { padding: 40px 20px 60px; gap: 24px; }
+    .page-hero   { padding: 44px 24px 40px; }
+    .section-inner { padding: 28px 24px 24px 30px; }
+    .legal-cta   { flex-direction: column; padding: 32px 28px; text-align: center; }
+    .cta-link    { width: 100%; justify-content: center; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic - Home">
+        <img src="static/img/logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Legal</p>
+      <h1 class="page-heading">Terms of Use</h1>
+      <p class="page-sub">The rules of the road for our collaboration.</p>
+    </div>
+  </section>
+
+  <!-- DECORATION BANNER -->
+  <!--<div id="decoration-banner">-->
+    <!--<img src="static/img/decorationbanner.png" alt="From complexity to clarity" width="1400" height="316" loading="lazy">-->
+  <!--</div>-->
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="legal-main">
+
+    <p class="last-updated">Last updated: April 2026</p>
+
+    <!-- Welcome -->
+    <section class="legal-section" aria-labelledby="terms-welcome">
+      <div class="section-inner">
+        <span class="section-tag">Introduction</span>
+        <h2 class="section-title" id="terms-welcome">Welcome to Resolved Logic</h2>
+        <p>By accessing or using this website, you agree to these Terms of Use and our <a href="privacy.html" style="color:var(--orange);">Privacy Policy</a>. If the logic doesn't sit right with you, please do not use the website.</p>
+      </div>
+    </section>
+
+    <!-- About this website -->
+    <section class="legal-section" aria-labelledby="terms-about">
+      <div class="section-inner">
+        <span class="section-tag">About This Website</span>
+        <h2 class="section-title" id="terms-about">What this website is for</h2>
+        <p>This website is operated by Resolved Logic. It is used to share information about our digital solutions, case studies, and services. While we strive for "Clarity from Complexity," we make no guarantees that the information here is always 100% up-to-date or free of the occasional human typo.</p>
+        <div class="callout">Use of this website is at your own risk.</div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="legal-section" aria-labelledby="terms-services">
+      <div class="section-inner">
+        <span class="section-tag">Services &amp; Consultancy</span>
+        <h2 class="section-title" id="terms-services">Portfolio content and professional advice</h2>
+        <p>The content on this website (including case studies like "Paws a Moment" and "Summerfest") is provided for informational and portfolio purposes only.</p>
+        <ul>
+          <li>Viewing a case study does not constitute professional advice or a formal contract for services.</li>
+          <li>Every business problem is unique. Solutions built for one client may not be applicable to another without a formal discovery process and a signed Statement of Work (SOW).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- IP -->
+    <section class="legal-section" aria-labelledby="terms-ip">
+      <div class="section-inner">
+        <span class="section-tag">Intellectual Property</span>
+        <h2 class="section-title" id="terms-ip">Copyright &amp; ownership</h2>
+        <p>Unless otherwise stated, all content on this website, including text, custom code snippets, graphics, and our "Resolved" branding, is owned by Resolved Logic.</p>
+        <ul>
+          <li><strong>The Good News:</strong> You are welcome to be inspired by our designs.</li>
+          <li><strong>The Rules:</strong> You may not reproduce, distribute, or scrape content from this website for commercial use without our prior written permission.</li>
+          <li><strong>Third-Party Work:</strong> We respect the IP of our clients. If you believe content here infringes on a copyright, please contact us immediately.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- External Links -->
+    <section class="legal-section" aria-labelledby="terms-links">
+      <div class="section-inner">
+        <span class="section-tag">External Links</span>
+        <h2 class="section-title" id="terms-links">Links to live projects and third-party sites</h2>
+        <p>We often link to our live projects (like <a href="https://pawsamoment.org.au" target="_blank" rel="noopener" style="color:var(--orange);">pawsamoment.org.au</a>). While we built those systems, we do not control the day-to-day content added by those organisations. Accessing external sites via our portfolio is done at your own risk.</p>
+      </div>
+    </section>
+
+    <!-- Branding -->
+    <section class="legal-section" aria-labelledby="terms-brand">
+      <div class="section-inner">
+        <span class="section-tag">Logo &amp; Branding</span>
+        <h2 class="section-title" id="terms-brand">Our name and identity</h2>
+        <p>The Resolved Logic name and the "Complexity to Clarity" hexagon logo are our identifiers. Please don't use them to represent your own work or imply an endorsement that hasn't been discussed over a coffee first.</p>
+      </div>
+    </section>
+
+    <!-- Changes -->
+    <section class="legal-section" aria-labelledby="terms-changes">
+      <div class="section-inner">
+        <span class="section-tag">Changes to These Terms</span>
+        <h2 class="section-title" id="terms-changes">Logic evolves</h2>
+        <p>We may update these Terms of Use from time to time. Changes take effect once published on this page. We recommend checking back occasionally. It's shorter than most terms you've clicked "Agree" on without reading.</p>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="legal-cta">
+      <div class="cta-text">
+        <h3>Questions about these Terms?</h3>
+        <p>We're happy to help, and we promise to be more responsive than a server during a DDoS attack.</p>
+      </div>
+      <a href="contact.html" class="cta-link">Get in Touch</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="static/img/logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:resolvedlogic@gmail.com">resolvedlogic@gmail.com</a><br>
+          Central Coast, NSW, Australia
+        </address>
+	
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. ABN 58 721 547 632.  All rights reserved. </p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy</a>
+        <!--<a href="sitemap.html">Sitemap</a>-->
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

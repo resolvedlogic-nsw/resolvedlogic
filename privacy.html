@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy - Resolved Logic. How we handle your data with precision.">
+  <title>Privacy Policy | Resolved Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── Page hero ── */
+  .page-hero {
+    margin-top: 100px;
+    background: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 10% 60%, rgba(232,101,10,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 20%, rgba(200,160,80,0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+    padding: 56px 40px 52px;
+    text-align: center;
+    position: relative;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .page-hero-inner { max-width: 700px; margin: 0 auto; }
+  .page-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .page-heading {
+    font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+    color: var(--text-dark); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px;
+  }
+  .page-sub { font-size: 1rem; font-weight: 300; color: #6a6050; max-width: 520px; margin: 0 auto; }
+
+  /* ── Main layout ── */
+  .legal-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .last-updated {
+    font-size: 0.75rem; color: #9a9590;
+    font-weight: 400; letter-spacing: 0.05em; margin-bottom: -16px;
+  }
+
+  /* ── Section card ── */
+  .legal-section {
+    background: #f2ede3;
+    border: 1px solid #e4ddd0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .legal-section::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--orange-light), var(--orange-dark));
+    z-index: 1;
+  }
+  .section-inner { padding: 32px 36px 32px 44px; }
+
+  .section-tag {
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange);
+    margin-bottom: 6px; display: block;
+  }
+  .section-title {
+    font-size: 1.05rem; font-weight: 700;
+    color: #2e2b26; margin-bottom: 16px; line-height: 1.3;
+  }
+
+  .legal-section p {
+    font-size: 0.9rem; color: #55524d; line-height: 1.8; margin-bottom: 14px;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    list-style: none; padding: 0; margin: 0 0 14px;
+  }
+  .legal-section ul li {
+    font-size: 0.88rem; color: #55524d; line-height: 1.7;
+    padding: 5px 0 5px 18px; position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .legal-section ul li:last-child { border-bottom: none; }
+  .legal-section ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 13px;
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--orange); opacity: 0.6;
+  }
+  .legal-section ul li strong { color: #2e2b26; font-weight: 600; }
+
+  /* Callout box */
+  .callout {
+    background: #ede8de;
+    border: 1px solid #ddd7cc;
+    border-radius: 6px;
+    padding: 16px 20px 16px 24px;
+    margin: 16px 0;
+    font-size: 0.87rem; color: #55524d; line-height: 1.7;
+    position: relative;
+  }
+  .callout::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--orange); border-radius: 6px 0 0 6px; opacity: 0.5;
+  }
+  .callout strong { color: #2e2b26; }
+  .callout ul { margin: 8px 0 0; }
+  .callout ul li { font-size: 0.85rem; padding: 3px 0 3px 16px; border-bottom: none; }
+  .callout ul li::before { top: 11px; width: 4px; height: 4px; }
+
+  /* Summary reassurance card */
+  .reassurance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .reassurance-item {
+    background: #ede8de;
+    border: 1px solid #ddd7cc;
+    border-radius: 6px;
+    padding: 14px 16px 14px 22px;
+    font-size: 0.84rem; color: #55524d; line-height: 1.5;
+    position: relative;
+  }
+  .reassurance-item::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--orange); border-radius: 6px 0 0 6px; opacity: 0.45;
+  }
+  .reassurance-item strong { display: block; color: #2e2b26; font-size: 0.78rem; font-weight: 700; margin-bottom: 3px; letter-spacing: 0.03em; }
+
+  /* Contact CTA */
+  .legal-cta {
+    background: var(--dark-grey);
+    background-image: var(--leather-pattern),
+      linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    border-radius: 10px;
+    padding: 40px 44px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .legal-cta::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .cta-text h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .cta-text p  { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin: 0; }
+  .cta-link {
+    display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0;
+    background: var(--orange);
+    background-image: var(--leather-pattern),
+      linear-gradient(145deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
+    color: #fff; font-family: var(--font);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 11px 24px; border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset,
+                0 -1px 0 rgba(0,0,0,0.25) inset,
+                0 4px 14px rgba(0,0,0,0.4);
+    transition: filter 0.2s ease, transform 0.1s ease;
+  }
+  .cta-link:hover  { filter: brightness(1.1); }
+  .cta-link:active { transform: translateY(1px); }
+
+  /* External link style */
+  .ext-link { color: var(--orange); transition: color 0.2s ease; }
+  .ext-link:hover { color: var(--orange-dark); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .legal-main    { padding: 40px 20px 60px; gap: 24px; }
+    .page-hero     { padding: 44px 24px 40px; }
+    .section-inner { padding: 28px 24px 24px 30px; }
+    .reassurance-grid { grid-template-columns: 1fr; }
+    .legal-cta     { flex-direction: column; padding: 32px 28px; text-align: center; }
+    .cta-link      { width: 100%; justify-content: center; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic - Home">
+        <img src="static/img/logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-eyebrow">Legal</p>
+      <h1 class="page-heading">Privacy Policy</h1>
+      <p class="page-sub">How we handle your data with precision.</p>
+    </div>
+  </section>
+
+  <!-- DECORATION BANNER
+  <div id="decoration-banner">
+    <img src="static/img/decorationbanner.png" alt="From complexity to clarity" width="1400" height="316" loading="lazy">
+  </div> -->
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="legal-main">
+
+    <p class="last-updated">Last updated: April 2026 · Applies to Australian Privacy Principles under the Privacy Act 1988 (Cth)</p>
+
+    <!-- Intro -->
+    <section class="legal-section" aria-labelledby="priv-intro">
+      <div class="section-inner">
+        <span class="section-tag">Our Approach</span>
+        <h2 class="section-title" id="priv-intro">Data handled the same way we handle complexity</h2>
+        <p>At Resolved Logic, we turn tangled problems into structured solutions. We take the same approach to your personal information: we keep it organised, secure, and minimal. We follow the Australian Privacy Principles under the <strong>Privacy Act 1988 (Cth)</strong>.</p>
+      </div>
+    </section>
+
+    <!-- What we collect -->
+    <section class="legal-section" aria-labelledby="priv-collect">
+      <div class="section-inner">
+        <span class="section-tag">Data Collection</span>
+        <h2 class="section-title" id="priv-collect">What information we collect</h2>
+        <p>As a consultancy, we don't need a lot of data to be effective. We only collect:</p>
+        <ul>
+          <li><strong>Contact Details:</strong> Your name and email address if you reach out via our contact form.</li>
+          <li><strong>Project Briefs:</strong> Any information you voluntarily provide about your business challenges.</li>
+          <li><strong>Technical Data:</strong> Basic "internet breadcrumbs" like your IP address and browser type via cookies, to help us understand how people are using our site.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Proprietary data access -->
+    <section class="legal-section" aria-labelledby="priv-proprietary">
+      <div class="section-inner">
+        <span class="section-tag">Client Engagements</span>
+        <h2 class="section-title" id="priv-proprietary">Access to proprietary data</h2>
+        <p>To build solutions that actually work, we often need to "look under the hood." This may involve accessing your existing databases, proprietary spreadsheets, legacy file structures, or third-party API keys (such as Square, Stripe, or Xero).</p>
+        <div class="callout">
+          <strong>The "Zipped Lips" Policy.</strong> We treat this data as strictly confidential. Access is obtained solely for the purposes of:
+          <ul>
+            <li>Mapping existing data to new, structured databases.</li>
+            <li>Auditing current workflows to identify technical requirements.</li>
+            <li>Testing the integrity of the completed solution.</li>
+          </ul>
+        </div>
+        <p>We do not store your business data longer than necessary for the build, and we never share your internal logic or trade secrets with third parties. We treat your data with the same precision and security as our own code.</p>
+      </div>
+    </section>
+
+    <!-- How we use it -->
+    <section class="legal-section" aria-labelledby="priv-use">
+      <div class="section-inner">
+        <span class="section-tag">Data Use</span>
+        <h2 class="section-title" id="priv-use">How we use your information</h2>
+        <p>We use your data strictly to:</p>
+        <ul>
+          <li>Respond to your enquiries.</li>
+          <li>Provide the bespoke digital solutions you have requested.</li>
+          <li>Improve the performance and logic of this website.</li>
+        </ul>
+        <div class="callout">We don't sell your data to third-party marketers. We build systems. We don't trade in people's contact lists.</div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section class="legal-section" aria-labelledby="priv-security">
+      <div class="section-inner">
+        <span class="section-tag">Security &amp; Storage</span>
+        <h2 class="section-title" id="priv-security">We are software developers, we don't leave the gate open</h2>
+        <p>We use industry-standard encryption and trusted third-party hosting (including GitHub and Cloudflare) to protect your information. While no system is 100% impenetrable, we prioritise security at the code level, not as an afterthought.</p>
+      </div>
+    </section>
+
+    <!-- Cookies -->
+    <section class="legal-section" aria-labelledby="priv-cookies">
+      <div class="section-inner">
+        <span class="section-tag">Cookies</span>
+        <h2 class="section-title" id="priv-cookies">The kind that don't leave crumbs on your desk</h2>
+        <p>We use cookies to help our website remember your preferences and understand site usage. You can disable cookies in your browser settings if you prefer to remain entirely anonymous, though some site features may be reduced as a result.</p>
+      </div>
+    </section>
+
+    <!-- Your rights -->
+    <section class="legal-section" aria-labelledby="priv-rights">
+      <div class="section-inner">
+        <span class="section-tag">Your Rights</span>
+        <h2 class="section-title" id="priv-rights">Access, correction, and deletion</h2>
+        <p>You can ask to access, correct, or delete your personal information at any time. Just send us an email. If we are not required to keep it for legal or tax reasons, it will be gone promptly.</p>
+        <p>Under the Australian Privacy Principles, you also have the right to make a complaint if you believe we have not handled your information appropriately.</p>
+      </div>
+    </section>
+
+    <!-- Complaints -->
+    <section class="legal-section" aria-labelledby="priv-complaints">
+      <div class="section-inner">
+        <span class="section-tag">Complaints</span>
+        <h2 class="section-title" id="priv-complaints">Concerns about your privacy</h2>
+        <p>If you have concerns about your privacy, contact us at <a href="mailto:resolvedlogic@gmail.com" class="ext-link">resolvedlogic@gmail.com</a>. We'll take it seriously and resolve it quickly.</p>
+        <p>If you are still not satisfied after we have responded, you can contact the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener" class="ext-link">www.oaic.gov.au</a>.</p>
+      </div>
+    </section>
+
+    <!-- Final reassurance -->
+    <section class="legal-section" aria-labelledby="priv-reassurance">
+      <div class="section-inner">
+        <span class="section-tag">The Short Version</span>
+        <h2 class="section-title" id="priv-reassurance">Final reassurance</h2>
+        <div class="reassurance-grid">
+          <div class="reassurance-item">
+            <strong>Minimal collection</strong>
+            We only collect what we actually need to do the work.
+          </div>
+          <div class="reassurance-item">
+            <strong>No data sales</strong>
+            Your information is never sold to third parties. Full stop.
+          </div>
+          <div class="reassurance-item">
+            <strong>No misuse</strong>
+            Data collected for one purpose is not used for another.
+          </div>
+          <div class="reassurance-item">
+            <strong>No trading for likes</strong>
+            We definitely don't exchange your data for social media engagement.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <div class="legal-cta">
+      <div class="cta-text">
+        <h3>Questions about your privacy?</h3>
+        <p>We'll respond clearly and promptly. No legal jargon required.</p>
+      </div>
+      <a href="contact.html" class="cta-link">Contact Us</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="static/img/logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:resolvedlogic@gmail.com">resolvedlogic@gmail.com</a><br>
+          Central Coast, NSW, Australia
+        </address>
+	
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. ABN 58 721 547 632.  All rights reserved. </p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy</a>
+        <!--<a href="sitemap.html">Sitemap</a>-->
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
