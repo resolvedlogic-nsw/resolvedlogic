@@ -1152,7 +1152,7 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
     margin: 0;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 740px) {
   .services-4-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
