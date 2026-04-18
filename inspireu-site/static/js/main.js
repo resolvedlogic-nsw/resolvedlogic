@@ -108,36 +108,37 @@
     });
   }
 
-  /* ── ACCESSIBILITY TOGGLE ── */
-document.addEventListener('DOMContentLoaded', function() {
-  const a11yBtn = document.querySelector('.fab-a11y'); // Or whatever ID/class you used for the ♿ button
-  
-  if (a11yBtn) {
-    // 1. Check local storage on load
-    if (localStorage.getItem('a11y-mode') === 'true') {
-      document.documentElement.classList.add('a11y-mode');
+  /* ── ACCESSIBILITY MODE TOGGLE ── */
+  /* Applies class to <html> so CSS selectors like html.a11y-mode work */
+  var fabA11y = document.getElementById('fab-a11y');
+  var A11Y_LS_KEY = 'a11y-mode';
+
+  function applyA11y(on) {
+    document.documentElement.classList.toggle('a11y-mode', on);
+    document.body.classList.toggle('a11y-mode', on); /* belt-and-braces for both CSS targets */
+    if (fabA11y) {
+      fabA11y.classList.toggle('active', on);
+      fabA11y.setAttribute('aria-pressed', String(on));
+      var tip = document.querySelector('.fab-tooltip');
+      if (tip) tip.textContent = on ? 'Accessibility: ON' : 'Accessibility mode';
     }
-
-    // 2. Toggle on click
-    a11yBtn.addEventListener('click', function () {
-      document.documentElement.classList.toggle('a11y-mode');
-      
-      // 3. Save the new state to local storage
-      const isActive = document.documentElement.classList.contains('a11y-mode');
-      localStorage.setItem('a11y-mode', isActive);
-    });
+    /* Load Atkinson Hyperlegible font on first activation */
+    if (on && !document.getElementById('a11y-font')) {
+      var link = document.createElement('link');
+      link.id = 'a11y-font';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap';
+      document.head.appendChild(link);
+    }
   }
-});
 
-  /* Load saved preference immediately */
-  var savedA11y = localStorage.getItem(A11Y_KEY) === 'true';
-  applyA11y(savedA11y);
+  /* Apply saved preference immediately on load */
+  applyA11y(localStorage.getItem(A11Y_LS_KEY) === 'true');
 
   if (fabA11y) {
     fabA11y.addEventListener('click', function () {
-      var isOn = document.body.classList.contains('a11y-mode');
-      var newState = !isOn;
-      localStorage.setItem(A11Y_KEY, String(newState));
+      var newState = !document.documentElement.classList.contains('a11y-mode');
+      localStorage.setItem(A11Y_LS_KEY, String(newState));
       applyA11y(newState);
     });
   }
