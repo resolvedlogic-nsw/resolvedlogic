@@ -1072,13 +1072,13 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   }
   .service-trauma-featured .service-card .svc-icon { margin-bottom: 0; }
 }
-@media (max-width: 1100px) {
+
+@media (max-width: 1120px) {
+  nav { padding: 1rem 1.5rem; }
   .team-grid { grid-template-columns: repeat(3, 1fr); }
   .why-grid  { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-}
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
+  
   .nav-links {
     display: none; flex-direction: column; position: absolute;
     top: 100%; left: 0; right: 0; background: rgba(254,252,248,0.98);
@@ -1091,7 +1091,9 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   .nav-links a:hover { background: var(--ocean-wash); color: var(--ocean) !important; }
   .nav-cta { text-align: center; }
   .nav-toggle { display: flex; }
+}
 
+@media (max-width: 900px) {
   /* Hero mobile — content centred vertically, not bottom-aligned */
   .page-hero {
     height: auto;
@@ -1140,7 +1142,6 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   .dark-section, .split-section, .contact-section, .area-section { padding: 4rem 1.5rem; }
   .trust-bar { gap: 1.5rem; padding: 1.4rem 1.5rem; }
   .fab-group { bottom: 1.5rem; right: 1rem; }
-}
 
   .services-main-section { padding: 3rem 1rem 4rem !important; }
   /* Services page: reduce padding on split-inner blocks on mobile */
@@ -1151,6 +1152,7 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   .service-section-block .split-inner .split-photo {
     margin: 0;
   }
+}
 
 @media (max-width: 740px) {
   .services-4-grid { grid-template-columns: 1fr; }
@@ -1167,9 +1169,11 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   .hero-stats { display: none; } /* ensure hidden at 640px too */
   .fab { width: 44px; height: 44px; font-size: 1.1rem; }
 }
+
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr; }
 }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
