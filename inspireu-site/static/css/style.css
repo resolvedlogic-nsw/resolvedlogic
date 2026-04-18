@@ -1081,9 +1081,19 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   
   .nav-links {
     display: none; flex-direction: column; position: absolute;
-    top: 100%; left: 0; right: 0; background: rgba(254,252,248,0.98);
-    backdrop-filter: blur(14px); padding: 1rem 1.5rem 1.5rem;
-    border-bottom: 1px solid var(--light-border); gap: 0.3rem;
+    top: calc(100% + 0.5rem); /* Drops it just a tiny bit below the header */
+    right: 1.5rem; /* Aligns it perfectly under the hamburger button */
+   
+    
+    min-width: 280px; /* Gives it that nice "plus 20%" compact card width */
+    background: rgba(254,252,248,0.98);
+    backdrop-filter: blur(14px); 
+    padding: 1.5rem;
+    
+    border: 1px solid var(--light-border);
+    border-radius: 16px; /* Rounds the corners of the dropdown */
+    box-shadow: 0 14px 40px rgba(26,107,138,0.15); /* Adds a soft drop shadow */
+    gap: 0.3rem;
   }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
@@ -1168,8 +1178,16 @@ body.a11y-mode *:focus-visible { outline: 4px solid var(--charcoal); outline-off
   /* hero-ctas stay row (set at 900px) */
   .hero-stats { display: none; } /* ensure hidden at 640px too */
   .fab { width: 44px; height: 44px; font-size: 1.1rem; }
-}
 
+  .nav-links {
+    top: 100%; /* Flush with the bottom of the header */
+    right: 0;
+    left: 0; /* Forces it full width again */
+    border-radius: 0; /* Removes the rounded corners */
+    border-left: none;
+    border-right: none;
+  }
+}
 @media (max-width: 480px) {
   .team-grid { grid-template-columns: 1fr; }
 }
