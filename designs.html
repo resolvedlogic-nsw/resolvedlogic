@@ -249,7 +249,15 @@
      ============================================================ */
   @media (max-width: 1024px) {
     .card-top { grid-template-columns: 1fr; }
-    .card-visual { border-left: none; border-top: 1px solid #e4ddd0; }
+    
+    /* ── FIX: Moves image above text and adjusts borders ── */
+    .card-visual { 
+      order: -1; 
+      border-left: none; 
+      border-top: none;
+      border-bottom: 1px solid #e4ddd0; 
+    }
+    
     .card-details { padding: 28px 32px; }
     .card-thumbs  { padding: 16px 32px 20px; }
     .card-summary { padding: 28px 32px 24px 36px; }
@@ -561,19 +569,107 @@
           <img src="static/img/h2.png" alt="Screenshot 2" class="gallery-thumb" loading="lazy">
           <img src="static/img/h3.png" alt="Screenshot 3" class="gallery-thumb" loading="lazy">
           <img src="static/img/h4.png" alt="Screenshot 4" class="gallery-thumb" loading="lazy">
-	  <img src="static/img/h5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
+	        <img src="static/img/h5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
  
         </div>
       </div>
     </article>
 
-    <!-- ── 04: ERP / OCR ── -->
-    <article class="project-card" data-index="04">
+        <!-- ── 04: InspireU ── -->
+<article class="project-card" data-index="04">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
             <span class="project-number">04</span>
+            <span class="project-tag">Healthcare / Accessibility</span>
+          </div>
+          <h2 class="project-title">
+            <a href="https://inspireudisabilitysupport.com.au" target="_blank" rel="noopener">
+              InspireU Disability Support
+              <svg class="ext-icon" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </h2>
+          <p class="project-transform">
+            <span class="transform-from">Digital Barriers</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Accessible Clarity</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Navigating disability support is already overwhelming. Many NDIS provider websites compound this stress with poor accessibility, unpredictable navigation, and institutional messaging that alienates participants with diverse cognitive or physical needs.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A lightweight, ultra-fast web application engineered strictly for accessibility and empathy. Built with semantic HTML, fluid responsive breakpoints, and serverless infrastructure to ensure a frictionless, welcoming experience across all devices.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>A high-performance, WCAG-aligned digital presence that empowers participants to easily explore services, and allows the business to scale without backend server overhead.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/inspireulogo.png" alt="InspireU Disability Support" class="project-logo">
+          </div>
+          <div class="gallery-hero">
+            <img src="static/img/i1.png" alt="InspireU Disability Support — homepage" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>Serverless Infrastructure:</strong> Deep Netlify integration handles hosting and automated form processing (including secure PDF resume uploads) with zero database overhead.</li>
+              <li><strong>Zero-Dependency Performance:</strong> Built with pure HTML, CSS, and vanilla JavaScript—bypassing heavy front-end frameworks to deliver near-instantaneous page load speeds.</li>
+              <li><strong>Semantic Accessibility:</strong> Strict adherence to ARIA labels, semantic landmark roles, and logical document structure ensuring robust screen reader compatibility.</li>
+              <li><strong>Responsive Fluidity:</strong> Custom CSS architecture utilizing specific, math-driven breakpoints (e.g., 1120px mobile-menu triggers) to maintain layout integrity from 4K monitors to older smartphones.</li>
+              <li><strong>Asynchronous Data Handling:</strong> Fetch API integration intercepts form submissions in the background, preventing disorienting page reloads while communicating securely with the server.</li>
+              <li><strong>Design System Variables:</strong> Global UI theming controlled entirely via CSS custom properties, ensuring visual consistency and rapid iteration across the platform.</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Cognitive Predictability:</strong> Strict navigation patterns (eschewing confusing "hybrid" menus for clear full-to-hamburger switches) eliminate the "where did it go?" anxiety for users with cognitive or learning disabilities.</li>
+              <li><strong>Trauma-Informed UI:</strong> Warm color palettes, highly legible typography, and compassionate copywriting create a safe, welcoming digital environment rather than a sterile medical one.</li>
+              <li><strong>Frictionless Connection:</strong> A streamlined contact portal allows participants, families, and support coordinators to reach out—or staff to apply for roles—in seconds without jumping through hoops.</li>
+              <li><strong>Any-Device Independence:</strong> Whether viewed on a desktop, an iPad propped on a wheelchair tray, or a mobile phone on the go, the interface adapts flawlessly without sacrificing tap-target sizes.</li>
+              <li><strong>Immediate Reassurance:</strong> Custom on-page visual feedback provides instant confirmation when an enquiry is sent, giving anxious users immediate peace of mind.</li>
+              <li><strong>Empowered Self-Selection:</strong> Distinct, jargon-free service outlines (from Community Access to Complex Care) allow participants to comfortably self-educate before initiating a conversation.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/i1.png" alt="Homepage" class="gallery-thumb active" loading="lazy">
+          <img src="static/img/i2.png" alt="Mobile Homepage" class="gallery-thumb" loading="lazy">
+          <img src="static/img/i3.png" alt="Menu sample" class="gallery-thumb" loading="lazy">
+          <img src="static/img/i4.png" alt="Screenshot 4" class="gallery-thumb" loading="lazy">
+          <img src="static/img/i5.png" alt="Screenshot 5" class="gallery-thumb" loading="lazy">
+          <img src="static/img/i6.png" alt="Standard Mode" class="gallery-thumb" loading="lazy">
+          <img src="static/img/i7.png" alt="Accessibility Mode" class="gallery-thumb" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+
+    <!-- ── 05: ERP / OCR ── -->
+    <article class="project-card" data-index="05">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">05</span>
             <span class="project-tag">Automation / OCR / ERP</span>
           </div>
           <h2 class="project-title">Internal ERP &amp; OCR Systems</h2>
