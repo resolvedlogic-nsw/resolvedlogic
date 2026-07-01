@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resolved Logic — Clarity from Complexity. Turning tangled problems into structured solutions.">
+  <title>Home | Resolved Logic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ── HOME PAGE specific styles ── */
+  #hero {
+    margin-top: 100px;
+    height: 300px;
+    background-image:
+      radial-gradient(ellipse at 15% 50%, rgba(232,101,10,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 30%, rgba(200,160,80,0.07) 0%, transparent 50%),
+      linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; flex-direction: column;
+    padding: 0 40px; position: relative; overflow: hidden;
+  }
+  #hero::after {
+    content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+  .hero-heading {
+    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700;
+    color: var(--text-dark); line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 16px; opacity: 0; animation: fadeUp 0.7s ease 0.38s forwards;
+  }
+  .hero-sub {
+    font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 300;
+    color: #6a6050; letter-spacing: 0.02em; max-width: 520px;
+    opacity: 0; animation: fadeUp 0.7s ease 0.54s forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+/* ── HOME BRIEF STYLES ── */
+  .home-brief {
+    padding: 100px 40px;
+    background: var(--cream);
+  }
+  .brief-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .brief-heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+    letter-spacing: -0.02em;
+  }
+  .brief-text {
+    font-size: 1.1rem;
+    color: #55524d;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .brief-cta-group {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .brief-primary-btn {
+    background: var(--orange);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(232, 101, 10, 0.2);
+    transition: all 0.3s ease;
+  }
+  .brief-primary-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(232, 101, 10, 0.3);
+  }
+  .brief-subtext {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Right Side Decorative Box */
+  .brief-visual {
+    background: var(--cream-dark);
+    padding: 60px;
+    border-radius: 12px;
+    border: 1px solid #e4ddd0;
+    position: relative;
+  }
+  .visual-tag {
+    color: var(--orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .visual-box h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  /* Mobile Fix */
+  @media (max-width: 992px) {
+    .brief-inner { grid-template-columns: 1fr; gap: 40px; }
+    .home-brief { padding: 60px 24px; }
+  }
+  </style>
+</head>
+<body>
+
+  <header id="site-header" role="banner">
+    <div class="header-bg" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="home.html" class="header-logo" aria-label="Resolved Logic — Home">
+        <img src="static/img/logoheader.png" alt="Resolved Logic" width="400" height="89">
+      </a>
+      <button class="header-hamburger" id="hamburger" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="header-nav" aria-label="Main navigation">
+        <a href="home.html"    class="nav-link">Home</a>
+        <a href="designs.html" class="nav-link">Designs</a>
+        <a href="about.html"   class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-btn" role="button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" aria-label="Hero">
+      <p class="hero-eyebrow">Welcome to Resolved Logic</p>
+      <h1 class="hero-heading">Clarity from Complexity</h1>
+      <p class="hero-sub">Turning tangled problems into structured solutions.</p>
+    </section>
+
+    <div id="decoration-banner">
+      <img src="static/img/decorationbanner.png" alt="Resolved Logic — from complexity to clarity" width="1400" height="316" loading="lazy">
+    </div>
+<section class="home-brief">
+  <div class="brief-inner">
+    <div class="brief-content">
+      <h2 class="brief-heading">Software Engineering for a Messy World</h2>
+      <p class="brief-text">
+        Off-the-shelf software often fails when business logic gets complicated. We specialize in building custom, 
+        <strong>bespoke digital solutions</strong> that bridge the gap between fragmented data and operational clarity.
+      </p>
+      <p class="brief-text">
+        Whether it's automating manual workflows or digitizing a decade of paper records, we bring a 
+        structured approach to your most tangled technical challenges.
+      </p>
+      <div class="brief-cta-group">
+        <a href="designs.html" class="brief-primary-btn">Explore Our Case Studies</a>
+        <span class="brief-subtext">See the logic in action →</span>
+      </div>
+    </div>
+    
+    <div class="brief-visual">
+       <div class="visual-box">
+         <span class="visual-tag">The Goal</span>
+         <h3>Streamlined. Efficient. Resolved.</h3>
+       </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="static/img/logoheader.png" alt="Resolved Logic">
+        <p>Turning tangled problems into structured solutions. Strategy, clarity, and precision — delivered.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="designs.html">Designs</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          <a href="mailto:resolvedlogic@gmail.com">resolvedlogic@gmail.com</a><br>
+          Central Coast, NSW, Australia
+        </address>
+	
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Resolved Logic. ABN 58 721 547 632.  All rights reserved. </p>
+      <nav class="footer-bottom-links" aria-label="Footer legal links">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy</a>
+        <!--<a href="sitemap.html">Sitemap</a>-->
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

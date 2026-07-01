@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Your Contract | Resolved Logic</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <style>
+    .gate-wrapper {
+      max-width: 480px;
+      margin: 160px auto 80px auto;
+      background: var(--cream);
+      padding: 48px;
+      border-radius: 12px;
+      border: 1px solid #e4ddd0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .gate-heading { font-size: 1.7rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+    .gate-sub { font-size: 0.95rem; color: #6a6050; margin-bottom: 28px; }
+    .gate-input {
+      width: 100%; padding: 14px; border-radius: 6px;
+      border: 1px solid #cfc7bb; margin-bottom: 16px; font-size: 1rem; text-align: center;
+    }
+    .gate-btn {
+      background: var(--orange); color: white; padding: 14px 32px;
+      border-radius: 4px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; font-size: 0.85rem; border: none; cursor: pointer;
+      width: 100%;
+    }
+    .gate-error { color: var(--orange-dark); font-size: 0.85rem; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+  <div class="gate-wrapper">
+    <h1 class="gate-heading">Access Your Contract</h1>
+    <p class="gate-sub">Enter the mobile number we have on file for {{ client_name }} to continue.</p>
+
+    {% if error %}
+      <p class="gate-error">{{ error }}</p>
+    {% endif %}
+
+    {% if locked_out %}
+      <p class="gate-error">Too many attempts — please try again later, or contact us if you need help.</p>
+    {% else %}
+      <form method="POST">
+        {% csrf_token %}
+        <input type="tel" name="mobile" class="gate-input" placeholder="0412 345 678" required autofocus>
+        <button type="submit" class="gate-btn">Continue</button>
+      </form>
+    {% endif %}
+  </div>
+</body>
+</html>
