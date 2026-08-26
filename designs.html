@@ -230,6 +230,80 @@
     box-shadow: 0 0 0 1px var(--orange-dark), 0 4px 12px rgba(232,101,10,0.25);
   }
 
+  /* ============================================================
+     FLAGSHIP CARD — one distinct lead project, not another row
+     ============================================================ */
+  .project-card.flagship {
+    background: linear-gradient(180deg, #f7f1e3 0%, #f2ede3 55%);
+    border-color: rgba(232,101,10,0.32);
+    box-shadow: 0 6px 28px rgba(232,101,10,0.10), 0 2px 14px rgba(0,0,0,0.06);
+  }
+  .project-card.flagship::before { width: 6px; }
+
+  .flagship-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 55%, var(--orange-dark) 100%);
+    border-radius: 20px; padding: 5px 14px 5px 11px;
+    box-shadow: 0 3px 10px rgba(232,101,10,0.35);
+    margin-bottom: 14px;
+  }
+  .flagship-badge svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+  .flagship-stats {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 2px 0 22px;
+  }
+  .flagship-stat {
+    display: flex; align-items: baseline; gap: 5px;
+    font-size: 0.72rem; font-weight: 500; color: #6a6050;
+    background: rgba(255,255,255,0.7); border: 1px solid #e4ddd0; border-radius: 6px;
+    padding: 6px 12px;
+  }
+  .flagship-stat strong { font-size: 0.82rem; font-weight: 700; color: var(--orange-dark); }
+
+  /* Single lighter-weight stat badge for the non-flagship cards — same
+     idea as flagship-stat (a real number on the visible face, not
+     buried behind "expand"), but just one, so the flagship's 4-pill
+     row still reads as the more substantial project. */
+  .stat-pill {
+    display: inline-flex; align-items: baseline; gap: 6px;
+    font-size: 0.78rem; font-weight: 500; color: #6a6050;
+    background: rgba(255,255,255,0.55); border: 1px solid #e4ddd0; border-radius: 6px;
+    padding: 7px 14px; margin: 2px 0 20px;
+  }
+  .stat-pill strong { font-size: 0.87rem; font-weight: 700; color: var(--orange-dark); }
+
+  /* Browser-chrome frame around the flagship screenshot — a raw crop
+     reads as a snapshot; a framed one reads as a product. */
+  .browser-frame {
+    border-radius: 8px; overflow: hidden; background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+  }
+  .browser-toolbar {
+    display: flex; align-items: center; gap: 6px;
+    background: #eae4d6; padding: 8px 10px;
+  }
+  .browser-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .browser-dot.r { background: #e8654a; }
+  .browser-dot.y { background: #eab54a; }
+  .browser-dot.g { background: #4aab6a; }
+  .browser-url {
+    flex: 1; margin-left: 6px; background: #fff; border-radius: 4px;
+    padding: 3px 10px; font-size: 0.68rem; color: #a39d8c;
+    font-family: 'Courier New', monospace; letter-spacing: 0.01em;
+  }
+  .browser-frame .gallery-hero { border-radius: 0; box-shadow: none; }
+
+  /* Feature grid replaces the generic Technical/Human 2-column split
+     for the flagship — 5 real product categories instead of forcing
+     a broad platform into two arbitrary buckets. */
+  .card-details.flagship-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 26px 24px;
+  }
+
   /* ── Lightbox ── */
   #lightbox {
     display: none; position: fixed; inset: 0; z-index: 9999;
@@ -243,6 +317,51 @@
     cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.2s;
   }
   #lightbox-close:hover { opacity: 1; }
+
+  /* ============================================================
+     CLOSING CTA — mirrors the footer's dark/leather treatment so it
+     reads as a deliberate final beat, not a bolted-on banner
+     ============================================================ */
+  .designs-cta {
+    position: relative; overflow: hidden;
+    background-color: var(--dark-grey);
+    background-image: var(--leather-pattern), linear-gradient(180deg, var(--mid-grey) 0%, var(--dark-grey) 100%);
+    padding: 96px 40px;
+    text-align: center;
+  }
+  .designs-cta::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--orange) 30%, var(--orange-dark) 70%, transparent 100%);
+  }
+  .cta-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
+  .cta-eyebrow {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--orange-light); margin-bottom: 16px;
+  }
+  .cta-heading {
+    font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: #fff;
+    line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px;
+  }
+  .cta-sub {
+    font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.65);
+    line-height: 1.65; margin-bottom: 40px;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
+    color: #fff; border: none;
+    background: var(--orange);
+    background-image: var(--leather-pattern), linear-gradient(145deg, var(--orange-light) 0%, var(--orange) 45%, var(--orange-dark) 100%);
+    border-radius: 4px; padding: 17px 34px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset, 0 -1px 0 rgba(0,0,0,0.25) inset, 0 8px 24px rgba(0,0,0,0.4);
+    transition: filter 0.2s ease, transform 0.15s ease;
+  }
+  .cta-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-btn svg { width: 15px; height: 15px; }
+  @media (max-width: 600px) {
+    .designs-cta { padding: 64px 24px; }
+  }
 
   /* ============================================================
      RESPONSIVE
@@ -267,6 +386,7 @@
     .designs-hero { padding: 44px 24px 40px; }
     .card-summary { padding: 24px 24px 20px 28px; }
     .card-details { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+    .card-details.flagship-grid { grid-template-columns: 1fr; }
     .card-thumbs  { padding: 14px 24px 18px; }
     .summary-block { grid-template-columns: 1fr; gap: 2px; }
     .gallery-thumb { height: 70px; }
@@ -315,11 +435,15 @@
   <!-- ========== PROJECTS ========== -->
   <main id="main-content" class="designs-main">
 
-    <!-- ── 01: FosterRoster ── -->
-    <article class="project-card" data-index="01">
+    <!-- ── 01: FosterRoster (flagship) ── -->
+    <article class="project-card flagship" data-index="01">
       <div class="card-top">
 
         <div class="card-summary">
+          <div class="flagship-badge">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0l2.09 4.63 5.05.55-3.77 3.46 1.02 4.99L8 11.2l-4.39 2.43 1.02-4.99L.86 5.18l5.05-.55z"/></svg>
+            Flagship Project
+          </div>
           <div class="project-meta">
             <span class="project-number">01</span>
             <span class="project-tag">SaaS / Rescue Management</span>
@@ -342,15 +466,21 @@
             </div>
             <div class="summary-block">
               <span class="summary-label">Logic</span>
-              <p>A configurable Django SaaS platform generalising the workflows built for individual rescues into one product — animal roster, litter tracking, medical records, document vault, finance and a public adoption portal, deployable to any Australian rescue.</p>
+              <p>A configurable multi-tenant SaaS platform generalising the workflows built for individual rescues into one product — animal roster, litter tracking, medical records, adoption pipeline, financials and operations, deployable white-labelled to any Australian rescue.</p>
             </div>
             <div class="summary-block">
               <span class="summary-label">Result</span>
-              <p>One login for everything — from a newborn litter's daily weigh-ins to a signed adoption contract — with self-serve foster access and reporting that used to require a bespoke build per organisation.</p>
+              <p>One login for everything — from a newborn litter's daily weigh-ins to a signed, invoiced adoption contract — with self-serve foster access and reporting that used to require a bespoke build per organisation.</p>
             </div>
           </div>
+          <div class="flagship-stats">
+            <span class="flagship-stat"><strong>5</strong> core modules</span>
+            <span class="flagship-stat"><strong>20+</strong> features shipped</span>
+            <span class="flagship-stat"><strong>Multi-tenant</strong> SaaS</span>
+            <span class="flagship-stat"><strong>White-label</strong> per org</span>
+          </div>
           <button class="expand-btn" aria-expanded="false">
-            <span>View Technical &amp; Human Features</span>
+            <span>View The Full Feature Set</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
@@ -359,34 +489,63 @@
           <div class="project-logo-wrap">
             <img src="static/img/fosterlogo.png" alt="FosterRoster" class="project-logo">
           </div>
-          <div class="gallery-hero">
-            <img src="static/img/foster1.png" alt="FosterRoster — homepage" class="gallery-main-img">
+          <div class="browser-frame">
+            <div class="browser-toolbar">
+              <span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span>
+              <span class="browser-url">fosterroster.com.au</span>
+            </div>
+            <div class="gallery-hero">
+              <img src="static/img/foster1.png" alt="FosterRoster — homepage" class="gallery-main-img">
+            </div>
           </div>
         </div>
 
       </div>
       <div class="card-expanded">
-        <div class="card-details">
+        <div class="card-details flagship-grid">
           <div class="details-col">
-            <h5>Technical Logic</h5>
+            <h5>Animal Management</h5>
             <ul>
-              <li><strong>Configurable Roster:</strong> Central Animals module with per-animal Details, Medical, Vault, Gallery, History and Apps tabs</li>
-              <li><strong>Litter Tracking:</strong> Linked mother/litter records with a bulk weigh-in tool logging daily weights per pup</li>
-              <li><strong>Document Vault:</strong> Adoption contracts, vet records and staging files uploaded and managed per animal</li>
-              <li><strong>Council &amp; Business Admin:</strong> Business details, council forms and team access controls for multi-user rescues</li>
-              <li><strong>Contract Generation:</strong> In-app contract drafting tied directly to applications and adopters</li>
-              <li><strong>Public Portal:</strong> Configurable public-facing adoption portal per rescue, driven from the same underlying data</li>
+              <li><strong>Multi-View Roster:</strong> Cards, list or compact views, grouped by species, status or carer</li>
+              <li><strong>Guided Intake:</strong> Step-by-step wizard, plus a fast multi-littermate intake flow</li>
+              <li><strong>Weigh The Litter:</strong> Wheel-based nursery weigh-in tool with growth charts per kitten/pup</li>
+              <li><strong>Treatment Matrix:</strong> Vaccinations, worming, desexing and medicine inventory in one view</li>
             </ul>
           </div>
           <div class="details-col">
-            <h5>Human Impact</h5>
+            <h5>People &amp; CRM</h5>
             <ul>
-              <li><strong>Foster &amp; Volunteer Access:</strong> Carers and staff log in to their own portal to update animals without emailing admin</li>
-              <li><strong>Financial Transparency:</strong> Every expense and payment — vet bills, adoption fees — logged against the animal it belongs to</li>
-              <li><strong>Task Visibility:</strong> A shared Tasks &amp; To-Dos board keeps rescue chores and assignments in one place</li>
-              <li><strong>Medicine Cabinet:</strong> An approved treatment list stops guesswork on what a foster can safely give</li>
-              <li><strong>Help Desk &amp; Guides:</strong> Built-in help and support links so non-technical volunteers can self-serve</li>
-              <li><strong>Upgrade Path:</strong> Rescues start small and expand access/plan as their volunteer base grows</li>
+              <li><strong>Unified Contacts:</strong> Team (staff, carers, vets, donors) and Customer views in one directory</li>
+              <li><strong>Adaptive Profiles:</strong> A contact's page reshapes around their foster or adoption history automatically</li>
+              <li><strong>Household Profiling:</strong> Logistics captured per household, not just per person</li>
+              <li><strong>Communications Timeline:</strong> Every contact's history in one scrollable thread</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Adoption Pipeline</h5>
+            <ul>
+              <li><strong>Public Adoption Portal:</strong> Branded, per-organisation, fed straight from the live roster</li>
+              <li><strong>Application Review:</strong> Online applications with a built-in staff review workflow</li>
+              <li><strong>E-Signed Contracts:</strong> Adoption, foster, transfer and surrender — signed on screen, auto-filed</li>
+              <li><strong>Auto-Invoicing:</strong> The adoption fee is invoiced the moment a contract is signed</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Financials</h5>
+            <ul>
+              <li><strong>Expense Ledger:</strong> Filterable payment/expense history with PDF receipt generation</li>
+              <li><strong>Cash Reconciliation:</strong> A "banked date" field keeps physical cash handling auditable</li>
+              <li><strong>Split Expenses:</strong> One vet invoice divided automatically across a whole litter</li>
+              <li><strong>Financial History:</strong> Per-animal and per-person views, not just one master ledger</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Operations &amp; Platform</h5>
+            <ul>
+              <li><strong>Task Management:</strong> Due dates, assignment and recurrence for rescue chores</li>
+              <li><strong>Compliance Tracking:</strong> State-based council and legal requirements built in</li>
+              <li><strong>Custom Dashboard:</strong> Drag-to-reorder cards with multiple density modes</li>
+              <li><strong>Role-Based Access:</strong> Capability-level staff permissions, invited by email, per-org data isolation</li>
             </ul>
           </div>
         </div>
@@ -497,6 +656,7 @@
               <p>100% data audit readiness, zero paperwork loss, and a streamlined path from "Surrender" to "Forever Home."</p>
             </div>
           </div>
+          <span class="stat-pill"><strong>100%</strong>&nbsp;audit-ready</span>
           <button class="expand-btn" aria-expanded="false">
             <span>View Technical &amp; Human Features</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -586,6 +746,7 @@
               <p>Zero-wait entry for families and instant digital medical manifests for event safety teams on the day.</p>
             </div>
           </div>
+          <span class="stat-pill"><strong>3–4 min → &lt;30 sec</strong>&nbsp;per-family check-in</span>
           <button class="expand-btn" aria-expanded="false">
             <span>View Technical &amp; Human Features</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -672,6 +833,7 @@
               <p>Reduced "time-to-quote" and significantly higher quality OEM lead generation from engineers who arrive already knowing what they need.</p>
             </div>
           </div>
+          <span class="stat-pill"><strong>Sub-2 sec</strong>&nbsp;page loads catalogue-wide</span>
           <button class="expand-btn" aria-expanded="false">
             <span>View Technical &amp; Human Features</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -757,6 +919,7 @@
               <p>A high-performance, WCAG-aligned digital presence that empowers participants to easily explore services, and allows the business to scale without backend server overhead.</p>
             </div>
           </div>
+          <span class="stat-pill"><strong>WCAG-Aligned</strong>&nbsp;accessibility, zero server overhead</span>
           <button class="expand-btn" aria-expanded="false">
             <span>View Technical &amp; Human Features</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -840,6 +1003,7 @@
               <p>Instant retrieval of 10+ years of job history, automated financial reconciliation, and business intelligence previously impossible to access.</p>
             </div>
           </div>
+          <span class="stat-pill"><strong>4+ hrs → 4 sec</strong>&nbsp;monthly reconciliation</span>
           <button class="expand-btn" aria-expanded="false">
             <span>View Technical &amp; Human Features</span>
             <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -850,7 +1014,6 @@
           <div class="project-logo-wrap">
             <img src="static/img/eyelogo.png" alt="OCR Document Scanning" class="project-logo">
           </div>
-        <div class="card-visual">
           <div class="gallery-hero">
             <img src="static/img/o1.png" alt="ERP/OCR system dashboard" class="gallery-main-img">
           </div>
@@ -890,6 +1053,19 @@
     </article>
 
   </main>
+
+  <!-- ========== CLOSING CTA ========== -->
+  <section class="designs-cta">
+    <div class="cta-inner">
+      <p class="cta-eyebrow">Have Something Similar?</p>
+      <h2 class="cta-heading">Let's Untangle Your Next Problem.</h2>
+      <p class="cta-sub">Every project on this page started as someone else's spreadsheets, paper forms or workflow chaos. Tell us about yours.</p>
+      <a href="contact.html" class="cta-btn">
+        Start a Conversation
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer id="site-footer" role="contentinfo">
