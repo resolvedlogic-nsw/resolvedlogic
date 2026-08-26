@@ -315,13 +315,157 @@
   <!-- ========== PROJECTS ========== -->
   <main id="main-content" class="designs-main">
 
-    <!-- ── 01: Paws a Moment ── -->
+    <!-- ── 01: FosterRoster ── -->
     <article class="project-card" data-index="01">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
             <span class="project-number">01</span>
+            <span class="project-tag">SaaS / Rescue Management</span>
+          </div>
+          <h2 class="project-title">
+            <a href="https://fosterroster.com.au" target="_blank" rel="noopener">
+              FosterRoster
+              <svg class="ext-icon" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </h2>
+          <p class="project-transform">
+            <span class="transform-from">Manual Rescue Ops</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Unified Platform</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Independent animal rescues run intake, fostering, medical care, litters, contracts and finances across scattered spreadsheets, paper forms and group chats — nothing talks to each other, and none of it scales past a handful of volunteers.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A configurable Django SaaS platform generalising the workflows built for individual rescues into one product — animal roster, litter tracking, medical records, document vault, finance and a public adoption portal, deployable to any Australian rescue.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>One login for everything — from a newborn litter's daily weigh-ins to a signed adoption contract — with self-serve foster access and reporting that used to require a bespoke build per organisation.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="card-visual">
+          <div class="project-logo-wrap">
+            <img src="static/img/fosterlogo.png" alt="FosterRoster" class="project-logo">
+          </div>
+          <div class="gallery-hero">
+            <img src="static/img/foster1.png" alt="FosterRoster — homepage" class="gallery-main-img">
+          </div>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>Configurable Roster:</strong> Central Animals module with per-animal Details, Medical, Vault, Gallery, History and Apps tabs</li>
+              <li><strong>Litter Tracking:</strong> Linked mother/litter records with a bulk weigh-in tool logging daily weights per pup</li>
+              <li><strong>Document Vault:</strong> Adoption contracts, vet records and staging files uploaded and managed per animal</li>
+              <li><strong>Council &amp; Business Admin:</strong> Business details, council forms and team access controls for multi-user rescues</li>
+              <li><strong>Contract Generation:</strong> In-app contract drafting tied directly to applications and adopters</li>
+              <li><strong>Public Portal:</strong> Configurable public-facing adoption portal per rescue, driven from the same underlying data</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>Foster &amp; Volunteer Access:</strong> Carers and staff log in to their own portal to update animals without emailing admin</li>
+              <li><strong>Financial Transparency:</strong> Every expense and payment — vet bills, adoption fees — logged against the animal it belongs to</li>
+              <li><strong>Task Visibility:</strong> A shared Tasks &amp; To-Dos board keeps rescue chores and assignments in one place</li>
+              <li><strong>Medicine Cabinet:</strong> An approved treatment list stops guesswork on what a foster can safely give</li>
+              <li><strong>Help Desk &amp; Guides:</strong> Built-in help and support links so non-technical volunteers can self-serve</li>
+              <li><strong>Upgrade Path:</strong> Rescues start small and expand access/plan as their volunteer base grows</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-thumbs">
+          <img src="static/img/foster1.png" alt="Homepage" class="gallery-thumb active" loading="lazy">
+          <img src="static/img/foster2.png" alt="Roster dashboard" class="gallery-thumb" loading="lazy">
+          <img src="static/img/foster3.png" alt="Dashboard layout icons" class="gallery-thumb" loading="lazy">
+          <img src="static/img/foster4.png" alt="Animal profile" class="gallery-thumb" loading="lazy">
+          <img src="static/img/foster5.png" alt="Litter weigh-in tool" class="gallery-thumb" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <!-- ── 02: Budget Tyre Shed ── -->
+    <article class="project-card" data-index="02">
+      <div class="card-top" style="grid-template-columns: 1fr;">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <span class="project-tag">Digital Contracts / SMS Verification</span>
+          </div>
+          <h2 class="project-title">Budget Tyre Shed — Digital Contracts</h2>
+          <p class="project-transform">
+            <span class="transform-from">Paper Sign-Off</span>
+            <span class="transform-arrow">→</span>
+            <span class="transform-to">Verified E-Signing</span>
+          </p>
+          <div class="project-summary-blocks">
+            <div class="summary-block">
+              <span class="summary-label">Problem</span>
+              <p>Getting a customer's signature on a service agreement meant printing, signing and filing paper on-site — slow at the counter and awkward to retrieve later if a dispute came up.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Logic</span>
+              <p>A lightweight digital contract flow: the customer opens a unique link, verifies their identity against the mobile number on file, and signs on-screen — no account or app install required.</p>
+            </div>
+            <div class="summary-block">
+              <span class="summary-label">Result</span>
+              <p>Signed agreements land instantly with a timestamped, IP-logged record attached — no paper trail to lose, no manual filing.</p>
+            </div>
+          </div>
+          <button class="expand-btn" aria-expanded="false">
+            <span>View Technical &amp; Human Features</span>
+            <svg class="expand-chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+      </div>
+      <div class="card-expanded">
+        <div class="card-details">
+          <div class="details-col">
+            <h5>Technical Logic</h5>
+            <ul>
+              <li><strong>Identity Check:</strong> Mobile number verification gates access to each contract link before it can be viewed or signed</li>
+              <li><strong>Version Locking:</strong> The contract version is re-checked server-side at signing time, so editing the text after sending a link invalidates in-flight attempts</li>
+              <li><strong>Lockout Protection:</strong> Repeated failed verification attempts trigger a timed lockout on that link</li>
+              <li><strong>Audit Trail:</strong> Signer name, timestamp and IP address are recorded against every signed contract</li>
+            </ul>
+          </div>
+          <div class="details-col">
+            <h5>Human Impact</h5>
+            <ul>
+              <li><strong>No App, No Account:</strong> Customers sign from a text message link on whatever device they have in hand</li>
+              <li><strong>Faster Counter Turnaround:</strong> No printing or scanning — staff send a link and move on to the next customer</li>
+              <li><strong>Dispute-Ready Records:</strong> Every signed agreement is retrievable with proof of who signed it and when</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ── 03: Paws a Moment ── -->
+    <article class="project-card" data-index="03">
+      <div class="card-top">
+
+        <div class="card-summary">
+          <div class="project-meta">
+            <span class="project-number">03</span>
             <span class="project-tag">CRM / Compliance</span>
           </div>
           <h2 class="project-title">
@@ -404,13 +548,13 @@
       </div>
     </article>
 
-    <!-- ── 02: Summerfest ── -->
-    <article class="project-card" data-index="02">
+    <!-- ── 04: Summerfest ── -->
+    <article class="project-card" data-index="04">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
-            <span class="project-number">02</span>
+            <span class="project-number">04</span>
             <span class="project-tag">Registration / Events</span>
           </div>
           <h2 class="project-title">
@@ -490,13 +634,13 @@
       </div>
     </article>
 
-    <!-- ── 03: Heatrex ── -->
-    <article class="project-card" data-index="03">
+    <!-- ── 05: Heatrex ── -->
+    <article class="project-card" data-index="05">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
-            <span class="project-number">03</span>
+            <span class="project-number">05</span>
             <span class="project-tag">Industrial / Information Architecture</span>
           </div>
           <h2 class="project-title">
@@ -575,13 +719,13 @@
       </div>
     </article>
 
-        <!-- ── 04: InspireU ── -->
-<article class="project-card" data-index="04">
+        <!-- ── 06: InspireU ── -->
+<article class="project-card" data-index="06">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
-            <span class="project-number">04</span>
+            <span class="project-number">06</span>
             <span class="project-tag">Healthcare / Accessibility</span>
           </div>
           <h2 class="project-title">
@@ -663,13 +807,13 @@
     </article>
 
 
-    <!-- ── 05: ERP / OCR ── -->
-    <article class="project-card" data-index="05">
+    <!-- ── 07: ERP / OCR ── -->
+    <article class="project-card" data-index="07">
       <div class="card-top">
 
         <div class="card-summary">
           <div class="project-meta">
-            <span class="project-number">05</span>
+            <span class="project-number">07</span>
             <span class="project-tag">Automation / OCR / ERP</span>
           </div>
           <h2 class="project-title">Internal ERP &amp; OCR Systems</h2>
