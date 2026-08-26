@@ -30,7 +30,7 @@ img { display: block; max-width: 100%; }
 
 /* ── HEADER ── */
 #site-header { position: fixed; top: 0; left: 0; right: 0; height: 100px; z-index: 1000; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.35); }
-.header-bg { position: absolute; inset: 0; background: url('headerbg.jpg') center center / cover no-repeat; background-color: #1a1a1a; }
+.header-bg { position: absolute; inset: 0; background: url('static/img/headerbg.jpg') center center / cover no-repeat; background-color: #1a1a1a; }
 .header-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 100%); }
 .header-inner { position: relative; z-index: 1; height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; max-width: 1800px; margin: 0 auto; }
 .header-logo { flex-shrink: 0; display: flex; align-items: center; }
