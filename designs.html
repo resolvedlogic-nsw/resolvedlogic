@@ -407,26 +407,26 @@
         <div class="card-summary">
           <div class="project-meta">
             <span class="project-number">02</span>
-            <span class="project-tag">Digital Contracts / SMS Verification</span>
+            <span class="project-tag">Automotive / Inventory &amp; Reporting</span>
           </div>
-          <h2 class="project-title">Budget Tyre Shed — Digital Contracts</h2>
+          <h2 class="project-title">Budget Tyre Shed — Tyre Tracking &amp; Reporting</h2>
           <p class="project-transform">
-            <span class="transform-from">Paper Sign-Off</span>
+            <span class="transform-from">Paper Job Sheets</span>
             <span class="transform-arrow">→</span>
-            <span class="transform-to">Verified E-Signing</span>
+            <span class="transform-to">Digital Fleet Records</span>
           </p>
           <div class="project-summary-blocks">
             <div class="summary-block">
               <span class="summary-label">Problem</span>
-              <p>Getting a customer's signature on a service agreement meant printing, signing and filing paper on-site — slow at the counter and awkward to retrieve later if a dispute came up.</p>
+              <p>Every tyre fitted, rotated or replaced was tracked on paper dockets — no way to see sales trends, staff performance, or a vehicle's tyre history without digging through a filing cabinet.</p>
             </div>
             <div class="summary-block">
               <span class="summary-label">Logic</span>
-              <p>A lightweight digital contract flow: the customer opens a unique link, verifies their identity against the mobile number on file, and signs on-screen — no account or app install required.</p>
+              <p>A purpose-built CRM that replaces the paper docket with a digital sale record tied to the vehicle, its service history and the exact tyre spec sold — backed by an owner-curated fitment and vehicle knowledge base so counter staff can find the right tyre in seconds.</p>
             </div>
             <div class="summary-block">
               <span class="summary-label">Result</span>
-              <p>Signed agreements land instantly with a timestamped, IP-logged record attached — no paper trail to lose, no manual filing.</p>
+              <p>Every install, rotation and puncture repair is logged against the vehicle it happened to, with sales reports and an audit trail available in a few clicks instead of a few hours.</p>
             </div>
           </div>
           <button class="expand-btn" aria-expanded="false">
@@ -441,18 +441,22 @@
           <div class="details-col">
             <h5>Technical Logic</h5>
             <ul>
-              <li><strong>Identity Check:</strong> Mobile number verification gates access to each contract link before it can be viewed or signed</li>
-              <li><strong>Version Locking:</strong> The contract version is re-checked server-side at signing time, so editing the text after sending a link invalidates in-flight attempts</li>
-              <li><strong>Lockout Protection:</strong> Repeated failed verification attempts trigger a timed lockout on that link</li>
-              <li><strong>Audit Trail:</strong> Signer name, timestamp and IP address are recorded against every signed contract</li>
+              <li><strong>Fitment Lookup:</strong> Vehicle make/model/year matched against a curated fitment-rules table to find the correct tyre and wheel spec in seconds</li>
+              <li><strong>Tyre &amp; Vehicle Knowledge Base:</strong> Structured tyre width/aspect-ratio/rim hierarchy and vehicle variant database, with CSV import to bulk-load reference data</li>
+              <li><strong>Sales &amp; Service History:</strong> Every install, rotation, balance, alignment and puncture repair logged per vehicle, with odometer readings and km-on-tyres tracking</li>
+              <li><strong>Void, Not Delete:</strong> Sales are voided rather than removed — who entered it, who voided it and why all stay on the record</li>
+              <li><strong>Sales Reporting:</strong> Reports grouped by day, week or month covering revenue, volume and profit-per-install trends</li>
+              <li><strong>Role-Based Staff Accounts:</strong> Owner-only team management, so deactivating a staff member never orphans their sale history</li>
             </ul>
           </div>
           <div class="details-col">
             <h5>Human Impact</h5>
             <ul>
-              <li><strong>No App, No Account:</strong> Customers sign from a text message link on whatever device they have in hand</li>
-              <li><strong>Faster Counter Turnaround:</strong> No printing or scanning — staff send a link and move on to the next customer</li>
-              <li><strong>Dispute-Ready Records:</strong> Every signed agreement is retrievable with proof of who signed it and when</li>
+              <li><strong>Faster Counter Service:</strong> Staff pull up a vehicle's rego and see its full tyre history instead of asking the customer to remember</li>
+              <li><strong>Confident Recommendations:</strong> Fitment lookup means new staff can quote the right tyre size without years of tribal knowledge</li>
+              <li><strong>Ownership Visibility:</strong> The owner sees sales and profit trends at a glance instead of reconciling paper dockets at month-end</li>
+              <li><strong>Accountability:</strong> Every sale is tied to the staff member who entered it — protects the business and the customer if a dispute comes up</li>
+              <li><strong>No Lost Records:</strong> Vehicle and customer history persists even as staff turn over, since voided or edited records are kept, not deleted</li>
             </ul>
           </div>
         </div>
