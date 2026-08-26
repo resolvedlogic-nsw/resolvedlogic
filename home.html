@@ -87,7 +87,13 @@
   #tangleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .hero-veil {
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 620px 460px at 30% 50%, var(--cream) 40%, rgba(251,247,240,0.55) 68%, transparent 85%);
+    /* Anchored to the text column's own left padding (6vw), not a
+       percentage of the hero's full width — the hero isn't width-capped
+       in production the way the pitch preview was, so a %-based centre
+       drifted well past the actual headline on a wide monitor. Smaller
+       radius and tighter stops too, so the strings show through sooner
+       instead of hiding behind a big soft halo. */
+    background: radial-gradient(ellipse 360px 400px at calc(6vw + 170px) 50%, var(--cream) 20%, rgba(251,247,240,0.5) 45%, transparent 62%);
     pointer-events: none;
   }
 
