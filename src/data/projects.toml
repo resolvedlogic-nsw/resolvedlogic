@@ -1,0 +1,347 @@
+# Case studies, shown on the Designs page in the order they appear here.
+# To add one, copy a whole [[project]] block (including its [[project.features]] blocks) and edit it.
+# Add `ledger = true` to show a project's before/after on the home page.
+# Numbers (01, 02...) are generated automatically. Run `python build.py` afterwards.
+
+[[project]]
+title = "FosterRoster"
+ledger = true
+tag = "SaaS / Rescue Management"
+url = "https://fosterroster.com.au"
+flagship = true
+from = "Manual Rescue Ops"
+to = "Unified Platform"
+problem = "Independent animal rescues run intake, fostering, medical care, litters, contracts and finances across scattered spreadsheets, paper forms and group chats — nothing talks to each other, and none of it scales past a handful of volunteers."
+logic = "A configurable multi-tenant SaaS platform generalising the workflows built for individual rescues into one product — animal roster, litter tracking, medical records, adoption pipeline, financials and operations, deployable white-labelled to any Australian rescue."
+result = "One login for everything — from a newborn litter's daily weigh-ins to a signed, invoiced adoption contract — with self-serve foster access and reporting that used to require a bespoke build per organisation."
+cover = "static/img/foster-home.jpg"
+stats = [
+  { value = "5", label = "core modules" },
+  { value = "20+", label = "features shipped" },
+  { value = "Multi-tenant", label = "SaaS" },
+  { value = "White-label", label = "per org" },
+]
+images = [
+  { src = "static/img/foster1.png", alt = "Homepage" },
+  { src = "static/img/foster2.png", alt = "Roster dashboard" },
+  { src = "static/img/foster3.png", alt = "Dashboard layout icons" },
+  { src = "static/img/foster4.png", alt = "Animal profile" },
+  { src = "static/img/foster5.png", alt = "Litter weigh-in tool" },
+]
+
+[[project.features]]
+heading = "Animal Management"
+items = [
+  "Multi-View Roster: Cards, list or compact views, grouped by species, status or carer",
+  "Guided Intake: Step-by-step wizard, plus a fast multi-littermate intake flow",
+  "Weigh The Litter: Wheel-based nursery weigh-in tool with growth charts per kitten/pup",
+  "Treatment Matrix: Vaccinations, worming, desexing and medicine inventory in one view",
+]
+
+[[project.features]]
+heading = "People & CRM"
+items = [
+  "Unified Contacts: Team (staff, carers, vets, donors) and Customer views in one directory",
+  "Adaptive Profiles: A contact's page reshapes around their foster or adoption history automatically",
+  "Household Profiling: Logistics captured per household, not just per person",
+  "Communications Timeline: Every contact's history in one scrollable thread",
+]
+
+[[project.features]]
+heading = "Adoption Pipeline"
+items = [
+  "Public Adoption Portal: Branded, per-organisation, fed straight from the live roster",
+  "Application Review: Online applications with a built-in staff review workflow",
+  "E-Signed Contracts: Adoption, foster, transfer and surrender — signed on screen, auto-filed",
+  "Auto-Invoicing: The adoption fee is invoiced the moment a contract is signed",
+]
+
+[[project.features]]
+heading = "Financials"
+items = [
+  "Expense Ledger: Filterable payment/expense history with PDF receipt generation",
+  "Cash Reconciliation: A \"banked date\" field keeps physical cash handling auditable",
+  "Split Expenses: One vet invoice divided automatically across a whole litter",
+  "Financial History: Per-animal and per-person views, not just one master ledger",
+]
+
+[[project.features]]
+heading = "Operations & Platform"
+items = [
+  "Task Management: Due dates, assignment and recurrence for rescue chores",
+  "Compliance Tracking: State-based council and legal requirements built in",
+  "Custom Dashboard: Drag-to-reorder cards with multiple density modes",
+  "Role-Based Access: Capability-level staff permissions, invited by email, per-org data isolation",
+]
+
+[[project]]
+title = "Budget Tyre Shed — Tyre Tracking & Reporting"
+ledger = true
+tag = "Automotive / Inventory & Reporting"
+from = "Paper Job Sheets"
+to = "Digital Fleet Records"
+problem = "Every tyre fitted, rotated or replaced was tracked on paper dockets — no way to see sales trends, staff performance, or a vehicle's tyre history without digging through a filing cabinet."
+logic = "A purpose-built CRM that replaces the paper docket with a digital sale record tied to the vehicle, its service history and the exact tyre spec sold — backed by an owner-curated fitment and vehicle knowledge base so counter staff can find the right tyre in seconds."
+result = "Every install, rotation and puncture repair is logged against the vehicle it happened to, with sales reports and an audit trail available in a few clicks instead of a few hours."
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "Fitment Lookup: Vehicle make/model/year matched against a curated fitment-rules table to find the correct tyre and wheel spec in seconds",
+  "Tyre & Vehicle Knowledge Base: Structured tyre width/aspect-ratio/rim hierarchy and vehicle variant database, with CSV import to bulk-load reference data",
+  "Sales & Service History: Every install, rotation, balance, alignment and puncture repair logged per vehicle, with odometer readings and km-on-tyres tracking",
+  "Void, Not Delete: Sales are voided rather than removed — who entered it, who voided it and why all stay on the record",
+  "Sales Reporting: Reports grouped by day, week or month covering revenue, volume and profit-per-install trends",
+  "Role-Based Staff Accounts: Owner-only team management, so deactivating a staff member never orphans their sale history",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Faster Counter Service: Staff pull up a vehicle's rego and see its full tyre history instead of asking the customer to remember",
+  "Confident Recommendations: Fitment lookup means new staff can quote the right tyre size without years of tribal knowledge",
+  "Ownership Visibility: The owner sees sales and profit trends at a glance instead of reconciling paper dockets at month-end",
+  "Accountability: Every sale is tied to the staff member who entered it — protects the business and the customer if a dispute comes up",
+  "No Lost Records: Vehicle and customer history persists even as staff turn over, since voided or edited records are kept, not deleted",
+]
+
+[[project]]
+title = "Paws a Moment Rescue"
+tag = "CRM / Compliance"
+url = "https://pawsamoment.org.au"
+from = "Fragmented Data"
+to = "Unified Compliance"
+problem = "Critical animal data and legal surrenders were scattered across disparate emails and paper forms, making audits a nightmare and compliance a manual burden."
+logic = "A centralised Django CRM built to automate the full administrative lifecycle of a rescue organisation — from surrender intake to forever home placement."
+result = "100% data audit readiness, zero paperwork loss, and a streamlined path from \"Surrender\" to \"Forever Home.\""
+stats = [
+  { value = "100%", label = "audit-ready" },
+]
+images = [
+  { src = "static/img/p1.png", alt = "Homepage" },
+  { src = "static/img/p2.png", alt = "Screenshot 2" },
+  { src = "static/img/p3.png", alt = "Screenshot 3" },
+  { src = "static/img/p4.png", alt = "Screenshot 4" },
+  { src = "static/img/p5.png", alt = "Screenshot 5" },
+  { src = "static/img/p6.png", alt = "Screenshot 6" },
+  { src = "static/img/p7.png", alt = "Screenshot 7" },
+  { src = "static/img/p8.png", alt = "Screenshot 8" },
+]
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "Custom Django Admin: Role-based access for volunteers, carers and admins — each sees only what they need",
+  "Compliance Register: State-regulated surrender forms, microchip records and vet history in one auditable system",
+  "Cloudflare Security: DDoS protection, WAF rules and bot filtering hardening sensitive animal and personal data",
+  "Automated Workflows: Trigger-based status transitions move animals through intake, foster, vet and adoption stages automatically",
+  "Audit Trail: Every data change is timestamped and logged — fully defensible for government inspections",
+  "Email Integration: Transactional emails fire on key events — surrender confirmation, foster assignment, adoption approval",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Health Tracker: Automated weight and medication logging for every animal, with historical charts for vet handover",
+  "Auto-Contracts: Digital foster agreements generated from profiles, signed online and emailed automatically — no printing, no scanning",
+  "Marketing Cards: Shareable graphics generated directly from animal profiles for social media adoption campaigns",
+  "Volunteer Empowerment: Non-technical volunteers update records without needing IT support or admin intervention",
+  "Foster Visibility: Coordinators see real-time placement status, upcoming vet appointments and medical alerts across the entire rescue",
+  "Reporting: One-click monthly summaries of intake, outcomes and medical spend — previously a 4-hour manual task",
+]
+
+[[project]]
+title = "Summerfest Registration"
+ledger = true
+tag = "Registration / Events"
+url = "https://summerfestrego.lighthouse.net.au"
+from = "Registration Chaos"
+to = "Rapid Check-In"
+problem = "Managing 400+ registrations and on-site check-ins manually created dangerous delays for medical and dietary tracking at a youth summer festival."
+logic = "A high-availability registration portal bridging digital sign-up with physical arrival — built for speed, safety, and zero-friction volunteer operation."
+result = "Zero-wait entry for families and instant digital medical manifests for event safety teams on the day."
+stats = [
+  { value = "3–4 min → <30 sec", label = "per-family check-in" },
+]
+images = [
+  { src = "static/img/s1.png", alt = "Homepage" },
+  { src = "static/img/s2.png", alt = "Screenshot 2" },
+  { src = "static/img/s3.png", alt = "Screenshot 3" },
+  { src = "static/img/s4.png", alt = "Screenshot 4" },
+  { src = "static/img/s5.png", alt = "Screenshot 5" },
+  { src = "static/img/s6.png", alt = "Screenshot 6" },
+]
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "QR Code Engine: Unique QR codes generated per registration and emailed to families for instant gate scanning",
+  "Multi-Stage Forms: Complex validation handles group registrations, dietary flags, medical conditions and guardian consent in a single flow",
+  "Real-Time Dashboard: Live attendance counter, check-in log and flagged-medical-condition alerts for event coordinators",
+  "Offline Resilience: Check-in system degrades gracefully if internet drops — critical for outdoor festival environments",
+  "Data Export: One-click export of attendee manifests compatible with event safety and emergency services requirements",
+  "Admin Controls: Coordinators can manually check-in, search by name or QR, and add late registrations on the day",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Parent Peace of Mind: Sensitive medical, allergy and dietary data captured securely at registration — not on a clipboard at the gate",
+  "Volunteer Efficiency: Mobile-first check-in interface operable on any phone or tablet — volunteers trained in under 5 minutes",
+  "Auto-Confirmation: Immediate confirmation and full event-day instructions emailed to parents at point of registration",
+  "Safety Manifests: Medical staff can pull a live filtered list of attendees with specific conditions or allergies at any moment",
+  "Reduced Queues: Average check-in time dropped from 3–4 minutes to under 30 seconds per family",
+  "Audit Ready: Full registration history retained for post-event reporting, insurance and duty-of-care records",
+]
+
+[[project]]
+title = "Heatrex Wyong"
+tag = "Industrial / Information Architecture"
+url = "https://heatrex.com.au"
+status = "In development"
+from = "Industrial Density"
+to = "Logical Navigation"
+problem = "Hundreds of complex industrial heating products with overlapping specifications made it nearly impossible for engineers to identify the right solution quickly."
+logic = "A high-performance Information Architecture built on engineering logic — products organised by application, environment and certification rather than arbitrary categories."
+result = "Reduced \"time-to-quote\" and significantly higher quality OEM lead generation from engineers who arrive already knowing what they need."
+stats = [
+  { value = "Sub-2 sec", label = "page loads catalogue-wide" },
+]
+images = [
+  { src = "static/img/h1.png", alt = "Homepage" },
+  { src = "static/img/h2.png", alt = "Screenshot 2" },
+  { src = "static/img/h3.png", alt = "Screenshot 3" },
+  { src = "static/img/h4.png", alt = "Screenshot 4" },
+  { src = "static/img/h5.png", alt = "Screenshot 5" },
+]
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "IA Taxonomy: Product hierarchy engineered around how industrial buyers actually search — by watt density, zone classification and application type",
+  "Ex/Non-Ex Filtering: Hazardous area products clearly segregated with inline certification badges, reducing misquote risk",
+  "SEO Architecture: Clean, keyword-rich URL structures and structured data markup targeting long-tail industrial search terms",
+  "Spec Sheet Integration: Technical datasheets embedded per product with direct download — no registration wall blocking engineer access",
+  "Performance: Sub-2-second page loads across the product catalogue despite dense specification content",
+  "Mobile-Responsive: Full site functionality on mobile for site engineers browsing specs on the job",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Smart Quote Workflow: Quote request forms prompt for technical specs relevant to the selected product type — fewer back-and-forth emails per lead",
+  "Engineer Confidence: Certification information, wattage tables and installation notes inline — engineers self-qualify without calling sales",
+  "Trust Signalling: Professional documentation and compliance certificates visible to procurement and site managers",
+  "Reduced Support Load: FAQ and specification content answers pre-sales questions, freeing the Heatrex team for complex enquiries",
+  "Lead Quality: Enquiries arrive pre-filtered by product interest — sales team spends less time qualifying, more time closing",
+]
+
+[[project]]
+title = "InspireU Disability Support"
+tag = "Healthcare / Accessibility"
+url = "https://inspireudisabilitysupport.com.au"
+from = "Digital Barriers"
+to = "Accessible Clarity"
+problem = "Navigating disability support is already overwhelming. Many NDIS provider websites compound this stress with poor accessibility, unpredictable navigation, and institutional messaging that alienates participants with diverse cognitive or physical needs."
+logic = "A lightweight, ultra-fast web application engineered strictly for accessibility and empathy. Built with semantic HTML, fluid responsive breakpoints, and serverless infrastructure to ensure a frictionless, welcoming experience across all devices."
+result = "A high-performance, WCAG-aligned digital presence that empowers participants to easily explore services, and allows the business to scale without backend server overhead."
+stats = [
+  { value = "WCAG-Aligned", label = "accessibility, zero server overhead" },
+]
+images = [
+  { src = "static/img/i1.png", alt = "Homepage" },
+  { src = "static/img/i2.png", alt = "Mobile Homepage" },
+  { src = "static/img/i3.png", alt = "Menu sample" },
+  { src = "static/img/i4.png", alt = "Screenshot 4" },
+  { src = "static/img/i5.png", alt = "Screenshot 5" },
+  { src = "static/img/i6.png", alt = "Standard Mode" },
+  { src = "static/img/i7.png", alt = "Accessibility Mode" },
+]
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "Serverless Infrastructure: Deep Netlify integration handles hosting and automated form processing (including secure PDF resume uploads) with zero database overhead.",
+  "Zero-Dependency Performance: Built with pure HTML, CSS, and vanilla JavaScript—bypassing heavy front-end frameworks to deliver near-instantaneous page load speeds.",
+  "Semantic Accessibility: Strict adherence to ARIA labels, semantic landmark roles, and logical document structure ensuring robust screen reader compatibility.",
+  "Responsive Fluidity: Custom CSS architecture utilizing specific, math-driven breakpoints (e.g., 1120px mobile-menu triggers) to maintain layout integrity from 4K monitors to older smartphones.",
+  "Asynchronous Data Handling: Fetch API integration intercepts form submissions in the background, preventing disorienting page reloads while communicating securely with the server.",
+  "Design System Variables: Global UI theming controlled entirely via CSS custom properties, ensuring visual consistency and rapid iteration across the platform.",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Cognitive Predictability: Strict navigation patterns (eschewing confusing \"hybrid\" menus for clear full-to-hamburger switches) eliminate the \"where did it go?\" anxiety for users with cognitive or learning disabilities.",
+  "Trauma-Informed UI: Warm color palettes, highly legible typography, and compassionate copywriting create a safe, welcoming digital environment rather than a sterile medical one.",
+  "Frictionless Connection: A streamlined contact portal allows participants, families, and support coordinators to reach out—or staff to apply for roles—in seconds without jumping through hoops.",
+  "Any-Device Independence: Whether viewed on a desktop, an iPad propped on a wheelchair tray, or a mobile phone on the go, the interface adapts flawlessly without sacrificing tap-target sizes.",
+  "Immediate Reassurance: Custom on-page visual feedback provides instant confirmation when an enquiry is sent, giving anxious users immediate peace of mind.",
+  "Empowered Self-Selection: Distinct, jargon-free service outlines (from Community Access to Complex Care) allow participants to comfortably self-educate before initiating a conversation.",
+]
+
+[[project]]
+title = "Internal ERP & OCR Systems"
+ledger = true
+tag = "Automation / OCR / ERP"
+from = "Paper Backlog"
+to = "Digital Intelligence"
+problem = "A legacy of 5,000+ physical job cards and fragmented payment data across Square and Stripe meant no visibility into trends, profitability or customer history."
+logic = "A custom Python automation suite combining computer vision OCR, multi-platform API integration and a unified reporting dashboard."
+result = "Instant retrieval of 10+ years of job history, automated financial reconciliation, and business intelligence previously impossible to access."
+stats = [
+  { value = "4+ hrs → 4 sec", label = "monthly reconciliation" },
+]
+images = [
+  { src = "static/img/o1.png", alt = "Dashboard" },
+  { src = "static/img/o2.png", alt = "Screenshot 2" },
+]
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "OCR Pipeline: Computer Vision model trained to extract handwritten job card data — technician, job type, parts, labour — with high accuracy on varied handwriting",
+  "API Consolidation: Square and Stripe transaction data pulled, normalised and reconciled into a unified financial ledger via scheduled Python jobs",
+  "Pandas ETL: Automated cleaning pipeline handles duplicate detection, field normalisation and outlier flagging before dashboard load",
+  "Search Index: 5,000+ digitised job cards indexed for full-text search — find any job by customer, date range, part number or technician",
+  "Scheduled Automation: Nightly reconciliation runs without human intervention — data is always current by start of business",
+  "Extensible Architecture: Modular design allows new data sources (Xero, MYOB, additional gateways) to be added with minimal rework",
+]
+
+[[project.features]]
+heading = "Human Impact"
+items = [
+  "Time Recovery: Monthly financial reconciliation dropped from 4+ hours of manual work to a 4-second dashboard refresh",
+  "10-Year Visibility: Decade of job history — previously buried in filing cabinets — now searchable in under a second",
+  "Non-Technical Dashboards: Business owners and admin staff read financial summaries without touching a spreadsheet",
+  "Error Elimination: Manual data entry errors removed from the reporting chain — figures reconcile automatically against payment records",
+  "Customer Intelligence: Frequency, spend and service history per customer — enabling targeted follow-up and loyalty identification",
+  "Compliance Ready: Clean, auditable records reduce end-of-year accounting time and cost significantly",
+]
+
+[[project]]
+title = "Church Meals & Events System"
+tag = "Church / Payments & Check-In"
+from = "Cash & Clipboards"
+to = "Credits & Check-In"
+problem = "Weekly programs for families, kids and youth each took payment their own way. Children were handed into teachers' care with no reliable record of who was present, and the finance team had to pull Square and Stripe reports apart by hand."
+logic = "One multi-branch platform where each program has its own products, pricing and kiosk. Families prepay credits online or at the kiosk and redeem them with a time-limited QR code. Children are registered to families and enrolled per program, so a check-in records exactly which children are present."
+result = "Families get one login for balance, top-ups and QR codes. Staff get attendance and roster exports, a merch store that takes payments, and monthly finance reports that sort every sale to the right program."
+
+[[project.features]]
+heading = "Technical Logic"
+items = [
+  "Multi-Branch Platform: Dinners, coffee, kids and youth programs each get their own products, credit pricing, theme and kiosk from one install",
+  "QR Redemption: Time-limited codes scanned at a kiosk, with manual family search as a fallback",
+  "Online Payments: Credit top-ups through Square checkout, confirmed by webhook",
+  "Finance Pipeline: Square and Stripe exports uploaded monthly, duplicates skipped, every line classified to a program by an item library and pattern rules",
+]
+
+[[project.features]]
+heading = "Human Features"
+items = [
+  "Child Check-In: Children enrolled per program, with each session recording exactly which children are in the teachers' care",
+  "Merch Store: Online store that takes payments, with its sales flowing into the same finance reports",
+  "Staff Reports: Monthly finance analytics and PDF reports, plus attendance, roster and transaction exports",
+  "Family Self-Serve: PIN login to see balance, buy credit and generate a QR code without staff involvement",
+]

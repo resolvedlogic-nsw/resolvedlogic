@@ -1,0 +1,72 @@
+# Copy that appears in more than one place (the home page and the About page).
+
+# The three process stages. `short` is used on the home page, `long` on About.
+# `tangle` controls the strand artwork: higher is more tangled, lower is straighter.
+[[step]]
+title = "Understand"
+state = "TANGLED"
+tangle = 1.9
+short = "Map the workflows, data and pain points before touching a screen."
+long = "I start with deep discovery: mapping your current workflows, data sources, pain points and goals. I ask the uncomfortable questions so the solution fits the problem, not a guess at it."
+
+[[step]]
+title = "Structure"
+state = "MAPPED"
+tangle = 1.0
+short = "Data models, user flows and access rules, agreed before any code."
+long = "Before any code is written, I design the logical architecture: data models, user flows, access controls and integration points. You see and approve the blueprint before I build it."
+
+[[step]]
+title = "Build & Deliver"
+state = "RESOLVED"
+tangle = 0.2
+short = "Focused sprints, regular check-ins, then documentation and training."
+long = "I build in focused sprints with regular check-ins. No black boxes. When I deliver, I don't disappear: I document, train and support until your team is fully confident and self-sufficient."
+
+[[value]]
+title = "Clarity first"
+text = "I don't start building until I understand the problem completely. Most of the work happens before a single line of code is written."
+
+[[value]]
+title = "No fluff"
+text = "I build exactly what solves the problem. Features that don't serve a clear purpose don't get built. Complexity is the enemy."
+
+[[value]]
+title = "Long-term thinking"
+text = "Every decision is made with future maintainability in mind. Systems I build today should still make sense in five years."
+
+[[value]]
+title = "Human-centred"
+text = "Technical excellence means nothing if the people using the system find it confusing or frustrating. Usability is non-negotiable."
+
+[[capability]]
+title = "Custom Web Applications"
+text = "Django, Python and modern front-end. Purpose-built systems that do exactly what your organisation needs, nothing more."
+
+[[capability]]
+title = "CRM & Compliance Systems"
+text = "Centralised data management for organisations with complex compliance requirements, audit-ready by design."
+
+[[capability]]
+title = "Registration & Event Portals"
+text = "High-availability registration systems with QR check-in, real-time dashboards and automated communications."
+
+[[capability]]
+title = "Information Architecture"
+text = "Structured content hierarchies and navigation systems that help users find complex information quickly and confidently."
+
+[[capability]]
+title = "Automation & OCR Pipelines"
+text = "Python automation that digitises physical records, reconciles multi-platform data and eliminates manual reporting work."
+
+[[capability]]
+title = "API Integration"
+text = "Connecting disparate platforms (payment gateways, communication services, accounting systems) into a single coherent data layer."
+
+[[capability]]
+title = "Business Intelligence"
+text = "Dashboards and reporting systems that turn raw operational data into decisions, designed for non-technical users."
+
+[[capability]]
+title = "Security & Infrastructure"
+text = "Cloudflare integration, hardened access controls, encrypted data handling and audit logging for organisations with sensitive data obligations."

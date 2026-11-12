@@ -1,0 +1,108 @@
+---
+title: Resolved Logic | Clarity from Complexity
+description: Resolved Logic builds custom software for small organisations. Turning tangled problems into structured solutions.
+nav: home
+scripts: hero.js
+---
+<section id="hero" aria-label="Hero">
+  <div class="hero-content">
+    <p class="hero-tag" id="stateTag">STATE: TANGLED</p>
+    <h1 class="hero-heading">
+      <span class="w1"><span class="w2">from</span><span class="w3" id="complexityWord">Complexity</span></span>
+      <span class="w1">Clarity</span>
+    </h1>
+    <p class="hero-sub">{{ site.tagline }}</p>
+  </div>
+  <div class="hero-stage">
+    <canvas id="tangleCanvas" aria-hidden="true"></canvas>
+    <div class="hero-veil"></div>
+    <div class="strand-content" id="strandContent">
+      <div class="strand-card pos-a">
+        <p class="card-eyebrow">What I do</p>
+        <p class="card-title">Bespoke Software</p>
+        <p class="card-body">Off-the-shelf tools break when your business logic gets complicated. I build exactly what you need.</p>
+      </div>
+      <div class="strand-card pos-b">
+        <p class="card-eyebrow">The result</p>
+        <p class="card-title">Paper &rarr; Digital</p>
+        <p class="card-body">Filing cabinets and job dockets, turned into searchable, reportable systems.</p>
+      </div>
+      <div class="strand-card pos-a">
+        <p class="card-eyebrow">How</p>
+        <p class="card-title">Workflow Automation</p>
+        <p class="card-body">Manual processes automated end to end, from intake to invoice, without the busywork.</p>
+      </div>
+      <div class="strand-card pos-b">
+        <p class="card-eyebrow">For you</p>
+        <p class="card-title">Straight Answers</p>
+        <p class="card-body">Clear reporting and dashboards, so you always know where things stand.</p>
+      </div>
+      <a href="designs.html" class="strand-card pos-a cta">
+        <p class="card-eyebrow">Ready when you are</p>
+        <p class="card-title">See The Work &rarr;</p>
+        <p class="card-body">Browse real case studies, or get in touch. No obligation, just a conversation.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap statement">
+    <div>
+      <span class="label">What I do</span>
+      <h2 class="h2">Software engineering for a <em>messy</em> world</h2>
+      <div class="prose">
+        <p>Off-the-shelf software often fails when business logic gets complicated. I build custom, <strong>bespoke digital solutions</strong> that bridge the gap between fragmented data and operational clarity.</p>
+        <p>Whether it's automating manual workflows or digitising a decade of paper records, I bring a structured approach to your most tangled technical challenges.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="designs.html">Explore the case studies</a>
+        <a class="textlink" href="contact.html">Start a conversation</a>
+      </div>
+    </div>
+    <aside class="ledger" aria-label="Before and after, from real projects">
+      <div class="ledger-head"><span>Before</span><span>After</span></div>
+      {{ ledger }}
+    </aside>
+  </div>
+</section>
+
+<section class="section steps-sec">
+  <div class="wrap">
+    <div class="steps-head">
+      <span class="label">How a project goes</span>
+      <h2 class="h2">Three stages from tangle to <em>resolved</em></h2>
+    </div>
+    <div class="steps">{{ steps_short }}</div>
+  </div>
+</section>
+
+<section class="section feature">
+  <div class="wrap feature-grid">
+    <div>
+      <span class="label">Flagship project</span>
+      <h2 class="h2">FosterRoster, <em>one login</em> for a whole rescue</h2>
+      <p>A multi-tenant platform for animal rescue and foster organisations, from a newborn litter's daily weigh-ins to a signed, invoiced adoption contract. It started as bespoke builds for individual rescues and became one product, white-labelled for any Australian rescue.</p>
+      <div class="stats">{{ flagship_stats }}</div>
+      <div class="cta-row flush">
+        <a class="btn ghost" href="designs.html">Read the case study</a>
+        <a class="textlink on-ink" href="{{ flagship_url }}" target="_blank" rel="noopener">{{ flagship_host }} &nearr;</a>
+      </div>
+    </div>
+    <div class="browser">
+      <div class="browser-bar"><i></i><i></i><i></i><span>{{ flagship_host }}</span></div>
+      <img src="{{ flagship_cover }}" alt="FosterRoster homepage" width="1000" height="634">
+    </div>
+  </div>
+</section>
+
+<section class="section closing">
+  <div class="wrap closing-in">
+    <div>
+      <span class="label">Next</span>
+      <h2 class="h2">Have a problem <em>worth solving?</em></h2>
+      <p class="lede">Every project starts with a conversation. Tell me what's broken, slow or missing, and I'll tell you how I'd approach it.</p>
+    </div>
+    <div><a class="btn" href="contact.html">Start the conversation</a></div>
+  </div>
+</section>

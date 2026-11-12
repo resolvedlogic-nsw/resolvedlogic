@@ -1,0 +1,72 @@
+---
+title: Contact | Resolved Logic
+description: Tell Resolved Logic what's broken, slow or missing and get an honest answer on how it could be solved.
+nav: contact
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="label">State: listening</span>
+    <h1 class="h1">Let's <em>talk</em></h1>
+    <p class="lede">Tell me what's broken, slow or missing, and I'll tell you how I'd approach it.</p>
+    <svg class="thread" data-seed="41" data-n="11" data-h="80" aria-hidden="true"></svg>
+  </div>
+</section>
+<section class="wrap contact-grid">
+  <form class="form" id="contact-form" data-endpoint="{{ site.formspree }}" novalidate>
+    <input type="hidden" name="_subject" value="New Project Enquiry - Resolved Logic">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="row2">
+      <div class="field"><label for="first-name">First name <i>*</i></label><input id="first-name" name="first_name" type="text" placeholder="Jane" autocomplete="given-name" required></div>
+      <div class="field"><label for="last-name">Last name <i>*</i></label><input id="last-name" name="last_name" type="text" placeholder="Smith" autocomplete="family-name" required></div>
+    </div>
+    <div class="field"><label for="email">Email address <i>*</i></label><input id="email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required></div>
+    <div class="row2">
+      <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" placeholder="+61 4xx xxx xxx" autocomplete="tel"></div>
+      <div class="field"><label for="organisation">Organisation (optional)</label><input id="organisation" name="organisation" type="text" placeholder="Your company or charity" autocomplete="organization"></div>
+    </div>
+    <div class="field">
+      <label for="project-type">What best describes your need? <i>*</i></label>
+      <select id="project-type" name="project_type" required>
+        <option value="" disabled selected>Select a category…</option>
+        <option value="crm">CRM / Data Management System</option>
+        <option value="portal">Registration or Event Portal</option>
+        <option value="website">Website / Information Architecture</option>
+        <option value="automation">Automation / OCR / Data Processing</option>
+        <option value="integration">API Integration / Reporting Dashboard</option>
+        <option value="other">Other / Not sure yet</option>
+      </select>
+    </div>
+    <div class="field"><label for="message">Tell me about the problem <i>*</i></label><textarea id="message" name="message" placeholder="Describe the current situation. What's broken, slow or missing? What does the ideal outcome look like?" required></textarea></div>
+    <div><button class="btn" type="submit" id="submit-btn">Send message</button></div>
+    <p class="form-note">Your details are never shared. The message goes straight to my inbox.</p>
+    <div class="form-msg" id="form-success" role="status" hidden>Message sent, thank you. I'll be in touch within one business day.</div>
+    <div class="form-msg error" id="form-error" role="alert" hidden>Something went wrong sending your message. Please email me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</div>
+  </form>
+  <aside class="side">
+    <div>
+      <h3>Direct contact</h3>
+      <p class="big"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p class="small">{{ site.location }}</p>
+    </div>
+    <div>
+      <h3>What to expect</h3>
+      <ul>
+        <li>I reply to every enquiry within one business day</li>
+        <li>No sales pressure, just an honest conversation about your problem</li>
+        <li>I'll tell you upfront if I'm not the right fit</li>
+        <li>All discussions are treated as confidential</li>
+        <li>You get a clear scope and estimate before any work begins</li>
+      </ul>
+    </div>
+    <div>
+      <h3>A good fit</h3>
+      <ul>
+        <li>Charities and non-profits with compliance obligations</li>
+        <li>Event organisers managing complex registrations</li>
+        <li>Trade businesses with paper-based records to digitise</li>
+        <li>Industrial companies with dense product catalogues</li>
+        <li>Any organisation drowning in manual data work</li>
+      </ul>
+    </div>
+  </aside>
+</section>

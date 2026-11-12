@@ -1,0 +1,37 @@
+# Site-wide details. Change them here and every page updates when you run `python build.py`.
+name = "Resolved Logic"
+url = "https://resolvedlogic.com.au"
+tagline = "Turning tangled problems into structured solutions."
+email = "resolvedlogic@gmail.com"
+location = "Central Coast, NSW, Australia"
+abn = "58 721 547 632"
+copyright_year = 2026
+# Contact form posts here (Formspree).
+formspree = "https://formspree.io/f/mrerzeqn"
+
+# Main navigation. `key` matches the `nav:` line at the top of each page file.
+[[nav]]
+label = "Home"
+href = "index.html"
+key = "home"
+
+[[nav]]
+label = "Designs"
+href = "designs.html"
+key = "designs"
+
+[[nav]]
+label = "About"
+href = "about.html"
+key = "about"
+
+[[nav]]
+label = "Contact"
+href = "contact.html"
+key = "contact"
+button = true
+
+# Old addresses that now point somewhere else.
+[[redirect]]
+from = "home.html"
+to = "index.html"
